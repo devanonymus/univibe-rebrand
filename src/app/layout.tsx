@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AIChat from "@/components/ai/AIChat";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         </a>
 
         {children}
+        <AIChat />
       </body>
     </html>
   );
