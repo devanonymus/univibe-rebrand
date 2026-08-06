@@ -2,6 +2,7 @@
 @import "../styles/home-v2.css";
 @import "../styles/sizing.css";
 @import "../styles/mega-menu.css";
+@import "../styles/ai-chat.css";
 
 :root {
   --background: #050b14;
