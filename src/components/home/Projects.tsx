@@ -12,6 +12,8 @@ const projects = [
       "Un ecosistema di agenti AI che coordina analisi, strategia, contenuti, automazioni, pubblicazione e controllo delle performance.",
     focus:
       "Artificial Intelligence · Marketing Automation · Business Intelligence",
+    letter: "U",
+    className: "project-compact-uviq",
   },
   {
     slug: "netaudit-pro",
@@ -21,79 +23,93 @@ const projects = [
       "Una piattaforma per organizzare sopralluoghi, verifiche tecniche, criticità infrastrutturali e report professionali di rete.",
     focus:
       "Networking · Infrastructure · Audit · Reporting",
+    letter: "N",
+    className: "project-compact-network",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="projects-simple" id="progetti">
-      <div className="projects-simple-background" aria-hidden="true">
+    <section className="projects-compact" id="progetti">
+      <div className="projects-compact-background" aria-hidden="true">
         <div />
         <span>PROJECTS</span>
       </div>
 
-      <div className="section-container projects-simple-container">
-        <div className="projects-simple-opening">
+      <div className="section-container projects-compact-container">
+        <div className="projects-compact-opening">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.75 }}
           >
-            <p className="projects-simple-label">
+            <p className="projects-compact-label">
               Progetti proprietari
             </p>
 
             <h2>
               Idee trasformate
-              <strong> in sistemi digitali reali.</strong>
+              <strong> in prodotti digitali reali.</strong>
             </h2>
           </motion.div>
 
           <motion.p
-            className="projects-simple-intro"
+            className="projects-compact-intro"
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.7, delay: 0.06 }}
           >
-            Prodotti nati dall’osservazione di problemi concreti e progettati
-            per semplificare attività, informazioni e decisioni.
+            Soluzioni nate da problemi concreti e progettate per rendere
+            processi, informazioni e decisioni più semplici da governare.
           </motion.p>
         </div>
 
-        <div className="projects-simple-list">
+        <div className="projects-compact-grid">
           {projects.map((project, index) => (
             <motion.article
               key={project.slug}
-              className="projects-simple-item"
-              initial={{ opacity: 0, y: 25 }}
+              className={`project-compact-card ${project.className}`}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
+              viewport={{ once: true, amount: 0.28 }}
               transition={{
-                duration: 0.65,
-                delay: index * 0.07,
+                duration: 0.7,
+                delay: index * 0.08,
               }}
             >
-              <div className="projects-simple-name">
-                <p>{project.category}</p>
+              <div className="project-compact-visual" aria-hidden="true">
+                <div className="project-compact-grid-lines" />
+                <div className="project-compact-orbit" />
+                <span>{project.letter}</span>
+              </div>
+
+              <div className="project-compact-content">
+                <p className="project-compact-category">
+                  {project.category}
+                </p>
+
                 <h3>{project.name}</h3>
-              </div>
 
-              <div className="projects-simple-copy">
-                <p>{project.description}</p>
-                <span>{project.focus}</span>
-              </div>
+                <p className="project-compact-description">
+                  {project.description}
+                </p>
 
-              <Link href={`/progetti/${project.slug}`}>
-                Approfondisci
-              </Link>
+                <p className="project-compact-focus">
+                  {project.focus}
+                </p>
+
+                <Link href={`/progetti/${project.slug}`}>
+                  Approfondisci
+                </Link>
+              </div>
             </motion.article>
           ))}
         </div>
 
         <motion.div
-          className="projects-simple-closing"
+          className="projects-compact-closing"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
