@@ -8,168 +8,103 @@ const projects = [
     slug: "uviq",
     name: "UVIQ",
     category: "AI Business Operating System",
-    statement:
-      "Un reparto marketing digitale composto da agenti di intelligenza artificiale specializzati.",
     description:
-      "UVIQ nasce per trasformare analisi, strategia, produzione dei contenuti, automazioni, pubblicazione e misurazione in un unico sistema operativo per il marketing aziendale.",
-    challenge:
-      "Ridurre la frammentazione tra strumenti, attività e decisioni commerciali.",
-    solution:
-      "Un ecosistema capace di coordinare agenti AI, dati, workflow e persone all’interno dello stesso processo.",
-    result:
-      "Più velocità operativa, maggiore controllo e una strategia continuamente ottimizzabile.",
-    technologies:
-      "Artificial Intelligence · Automation · Strategy · Data",
-    className: "project-case-uviq",
+      "Un ecosistema di agenti AI che coordina analisi, strategia, contenuti, automazioni, pubblicazione e controllo delle performance.",
+    focus:
+      "Artificial Intelligence · Marketing Automation · Business Intelligence",
   },
   {
     slug: "netaudit-pro",
     name: "NetAudit Pro",
     category: "Network Audit Platform",
-    statement:
-      "L’analisi delle infrastrutture di rete diventa un processo tecnico ordinato, documentato e misurabile.",
     description:
-      "NetAudit Pro supporta consulenti e tecnici durante sopralluoghi, verifiche, progettazione degli interventi e produzione di report professionali.",
-    challenge:
-      "Trasformare informazioni tecniche sparse in una diagnosi chiara e utilizzabile.",
-    solution:
-      "Una piattaforma che centralizza dati, criticità, apparati, fotografie, verifiche e raccomandazioni operative.",
-    result:
-      "Audit più completi, report più professionali e maggiore controllo sullo stato dell’infrastruttura.",
-    technologies:
-      "Networking · Infrastructure · SaaS · Reporting",
-    className: "project-case-network",
+      "Una piattaforma per organizzare sopralluoghi, verifiche tecniche, criticità infrastrutturali e report professionali di rete.",
+    focus:
+      "Networking · Infrastructure · Audit · Reporting",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="projects-editorial" id="progetti">
-      <div className="projects-editorial-background" aria-hidden="true">
-        <div className="projects-editorial-glow" />
+    <section className="projects-simple" id="progetti">
+      <div className="projects-simple-background" aria-hidden="true">
+        <div />
         <span>PROJECTS</span>
       </div>
 
-      <div className="section-container projects-editorial-container">
-        <div className="projects-editorial-opening">
+      <div className="section-container projects-simple-container">
+        <div className="projects-simple-opening">
           <motion.div
-            className="projects-editorial-heading"
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.75 }}
           >
-            <p>Progetti proprietari</p>
+            <p className="projects-simple-label">
+              Progetti proprietari
+            </p>
 
             <h2>
-              Non ci limitiamo a consigliare innovazione.
-              <strong> Costruiamo prodotti che la rendono concreta.</strong>
+              Idee trasformate
+              <strong> in sistemi digitali reali.</strong>
             </h2>
           </motion.div>
 
-          <motion.div
-            className="projects-editorial-intro"
-            initial={{ opacity: 0, y: 25 }}
+          <motion.p
+            className="projects-simple-intro"
+            initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.75, delay: 0.08 }}
+            transition={{ duration: 0.7, delay: 0.06 }}
           >
-            <p>
-              I nostri progetti nascono da problemi osservati direttamente
-              nelle aziende e nelle attività professionali.
-            </p>
-
-            <p>
-              Non sono semplici esercizi tecnologici. Sono sistemi progettati
-              per organizzare processi, aumentare il controllo e creare nuove
-              possibilità operative.
-            </p>
-          </motion.div>
+            Prodotti nati dall’osservazione di problemi concreti e progettati
+            per semplificare attività, informazioni e decisioni.
+          </motion.p>
         </div>
 
-        <div className="projects-editorial-list">
+        <div className="projects-simple-list">
           {projects.map((project, index) => (
             <motion.article
               key={project.slug}
-              className={`project-case ${project.className}`}
-              initial={{ opacity: 0, y: 42 }}
+              className="projects-simple-item"
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.16 }}
+              viewport={{ once: true, amount: 0.35 }}
               transition={{
-                duration: 0.8,
-                delay: index * 0.08,
+                duration: 0.65,
+                delay: index * 0.07,
               }}
             >
-              <div className="project-case-visual" aria-hidden="true">
-                <div className="project-case-grid" />
-                <div className="project-case-orbit project-case-orbit-large" />
-                <div className="project-case-orbit project-case-orbit-small" />
-                <span className="project-case-letter">
-                  {project.name.charAt(0)}
-                </span>
-              </div>
-
-              <div className="project-case-content">
-                <p className="project-case-category">
-                  {project.category}
-                </p>
-
+              <div className="projects-simple-name">
+                <p>{project.category}</p>
                 <h3>{project.name}</h3>
-
-                <p className="project-case-statement">
-                  {project.statement}
-                </p>
-
-                <p className="project-case-description">
-                  {project.description}
-                </p>
-
-                <div className="project-case-analysis">
-                  <div>
-                    <span>La sfida</span>
-                    <p>{project.challenge}</p>
-                  </div>
-
-                  <div>
-                    <span>La soluzione</span>
-                    <p>{project.solution}</p>
-                  </div>
-
-                  <div>
-                    <span>Il risultato</span>
-                    <p>{project.result}</p>
-                  </div>
-                </div>
-
-                <div className="project-case-footer">
-                  <p>{project.technologies}</p>
-
-                  <Link href={`/progetti/${project.slug}`}>
-                    Scopri il progetto
-                  </Link>
-                </div>
               </div>
+
+              <div className="projects-simple-copy">
+                <p>{project.description}</p>
+                <span>{project.focus}</span>
+              </div>
+
+              <Link href={`/progetti/${project.slug}`}>
+                Approfondisci
+              </Link>
             </motion.article>
           ))}
         </div>
 
         <motion.div
-          className="projects-editorial-closing"
-          initial={{ opacity: 0, y: 25 }}
+          className="projects-simple-closing"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.75 }}
+          transition={{ duration: 0.7 }}
         >
           <p>
-            Hai individuato un problema che nessun software risolve davvero?
-            <span>
-              Potrebbe essere il punto di partenza per costruire un nuovo
-              sistema digitale.
-            </span>
+            Hai un problema operativo che nessun software risolve davvero?
           </p>
 
           <Link href="#contatti">
-            Parliamo della tua idea
+            Valutiamo la tua idea
           </Link>
         </motion.div>
       </div>
