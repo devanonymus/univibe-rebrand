@@ -1,92 +1,162 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 
-const technologies = [
-  "Next.js",
-  "React",
-  "Node.js",
-  "TypeScript",
-  "Python",
-  "Docker",
-  "Linux",
-  "Supabase",
-  "PostgreSQL",
-  "Cloudflare",
-  "AWS",
-  "Azure",
-  "OpenAI",
-  "Google Cloud",
-  "WordPress",
-  "GitHub",
+const foundations = [
+  {
+    title: "Architetture costruite per durare",
+    description:
+      "Progettiamo sistemi modulari, documentati e capaci di evolvere senza dover essere ricostruiti ogni volta che cambia una necessità.",
+  },
+  {
+    title: "Integrazione prima della sostituzione",
+    description:
+      "Valutiamo ciò che l’azienda utilizza già e colleghiamo strumenti, dati e processi quando è più utile che sostituirli.",
+  },
+  {
+    title: "Sicurezza dentro il progetto",
+    description:
+      "Accessi, ruoli, protezione dei dati, continuità e controllo non vengono aggiunti alla fine. Fanno parte dell’architettura.",
+  },
+  {
+    title: "Tecnologia proporzionata al problema",
+    description:
+      "Evitiamo infrastrutture sovradimensionate e soluzioni eccessivamente complesse. Ogni scelta deve produrre un vantaggio concreto.",
+  },
 ];
 
 export default function Technology() {
   return (
-    <section className="technology-section" id="ecosistema">
-      <div className="section-container">
-        <div className="technology-heading">
-          <div className="section-label">
-            <span>05</span>
-            <p>Ecosistema</p>
-          </div>
+    <section className="ecosystem-editorial" id="ecosistema">
+      <div className="ecosystem-editorial-background" aria-hidden="true">
+        <div className="ecosystem-editorial-grid" />
+        <div className="ecosystem-editorial-glow" />
+        <span>ECOSYSTEM</span>
 
-          <div>
-            <p className="section-kicker">Tecnologie moderne, scelte con criterio</p>
+        <div className="ecosystem-blueprint">
+          <div className="ecosystem-circle ecosystem-circle-large" />
+          <div className="ecosystem-circle ecosystem-circle-medium" />
+          <div className="ecosystem-circle ecosystem-circle-small" />
+
+          <div className="ecosystem-axis ecosystem-axis-horizontal" />
+          <div className="ecosystem-axis ecosystem-axis-vertical" />
+
+          <span className="ecosystem-node ecosystem-node-one" />
+          <span className="ecosystem-node ecosystem-node-two" />
+          <span className="ecosystem-node ecosystem-node-three" />
+        </div>
+      </div>
+
+      <div className="section-container ecosystem-editorial-container">
+        <div className="ecosystem-editorial-opening">
+          <motion.div
+            className="ecosystem-editorial-heading"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p>Ecosistema tecnologico</p>
 
             <h2>
-              Il futuro non è avere un software.
-              <span> È avere un sistema.</span>
+              La tecnologia giusta
+              <strong> è quella che l’azienda riesce a governare.</strong>
             </h2>
-          </div>
-        </div>
-
-        <div className="technology-layout">
-          <motion.div
-            className="technology-orb"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9 }}
-          >
-            <div className="orb-ring orb-ring-one" />
-            <div className="orb-ring orb-ring-two" />
-            <div className="orb-ring orb-ring-three" />
-
-            <div className="orb-core">
-              <span>U</span>
-              <p>UNIVIBE SYSTEM</p>
-            </div>
-
-            <span className="orb-point orb-point-one" />
-            <span className="orb-point orb-point-two" />
-            <span className="orb-point orb-point-three" />
-            <span className="orb-point orb-point-four" />
           </motion.div>
 
-          <div className="technology-content">
-            <p className="technology-description">
-              Non adottiamo tecnologie per moda. Selezioniamo strumenti,
-              infrastrutture e framework in funzione degli obiettivi,
-              dell&apos;affidabilità e della capacità di evolvere nel tempo.
+          <motion.div
+            className="ecosystem-editorial-intro"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.75, delay: 0.08 }}
+          >
+            <p>
+              Non scegliamo strumenti perché sono nuovi, popolari o
+              tecnicamente affascinanti.
             </p>
 
-            <div className="technology-grid">
-              {technologies.map((technology, index) => (
-                <motion.div
-                  key={technology}
-                  className="technology-item"
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: index * 0.025 }}
-                >
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p>{technology}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+            <p>
+              Li scegliamo quando permettono all’azienda di lavorare meglio,
+              proteggere i dati, integrare i processi e sostenere la crescita
+              senza aumentare inutilmente la complessità.
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className="ecosystem-editorial-statement"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p>
+            Non vendiamo una tecnologia specifica.
+            <strong>
+              Costruiamo l’architettura più adatta al risultato da ottenere.
+            </strong>
+          </p>
+        </motion.div>
+
+        <div className="ecosystem-editorial-foundations">
+          {foundations.map((foundation, index) => (
+            <motion.article
+              key={foundation.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.05,
+              }}
+            >
+              <h3>{foundation.title}</h3>
+              <p>{foundation.description}</p>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="ecosystem-editorial-stack">
+          <motion.div
+            className="ecosystem-editorial-stack-heading"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75 }}
+          >
+            <p>Le competenze tecniche</p>
+
+            <h3>
+              Software, cloud, dati, intelligenza artificiale e infrastrutture
+              diventano parti dello stesso sistema.
+            </h3>
+          </motion.div>
+
+          <motion.div
+            className="ecosystem-editorial-stack-copy"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75, delay: 0.08 }}
+          >
+            <p>
+              Lavoriamo con tecnologie moderne e consolidate, selezionate in
+              base a prestazioni, affidabilità, sicurezza, costi di gestione e
+              possibilità di evoluzione.
+            </p>
+
+            <p>
+              Il cliente non deve dipendere da una sigla tecnica. Deve poter
+              contare su un sistema comprensibile, mantenibile e coerente con
+              il proprio modello operativo.
+            </p>
+
+            <Link href="#contatti">
+              Valutiamo insieme la tua infrastruttura
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

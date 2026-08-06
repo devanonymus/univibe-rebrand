@@ -5749,3 +5749,421 @@ svg {
     border-left: 0;
   }
 }
+
+/* =========================================================
+   ECOSYSTEM EDITORIAL
+========================================================= */
+
+.technology-section {
+  display: none;
+}
+
+.ecosystem-editorial {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(105px, 10vw, 155px) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.085);
+  background:
+    linear-gradient(
+      135deg,
+      #07101c 0%,
+      #050b14 58%,
+      #081421 100%
+    );
+}
+
+.ecosystem-editorial-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ecosystem-editorial-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+  background-size: 90px 90px;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.75) 45%,
+    black
+  );
+}
+
+.ecosystem-editorial-glow {
+  position: absolute;
+  top: -320px;
+  right: -230px;
+  width: 820px;
+  height: 820px;
+  border-radius: 50%;
+  background: rgba(62, 141, 255, 0.1);
+  filter: blur(140px);
+}
+
+.ecosystem-editorial-background > span {
+  position: absolute;
+  right: -4%;
+  bottom: -5%;
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(130px, 18vw, 320px);
+  font-weight: 200;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(108, 203, 255, 0.032);
+}
+
+.ecosystem-blueprint {
+  position: absolute;
+  top: 18%;
+  right: -5%;
+  width: min(38vw, 570px);
+  aspect-ratio: 1;
+  opacity: 0.24;
+}
+
+.ecosystem-circle {
+  position: absolute;
+  border: 1px solid rgba(108, 203, 255, 0.14);
+  border-radius: 50%;
+}
+
+.ecosystem-circle-large {
+  inset: 0;
+}
+
+.ecosystem-circle-medium {
+  inset: 20%;
+}
+
+.ecosystem-circle-small {
+  inset: 37%;
+}
+
+.ecosystem-axis {
+  position: absolute;
+  background: rgba(108, 203, 255, 0.09);
+}
+
+.ecosystem-axis-horizontal {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 1px;
+}
+
+.ecosystem-axis-vertical {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
+
+.ecosystem-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4d9ddd;
+  box-shadow: 0 0 15px rgba(77, 157, 221, 0.85);
+}
+
+.ecosystem-node-one {
+  top: 22%;
+  left: 31%;
+}
+
+.ecosystem-node-two {
+  top: 38%;
+  right: 12%;
+}
+
+.ecosystem-node-three {
+  right: 29%;
+  bottom: 14%;
+  background: #f28b1f;
+  box-shadow: 0 0 16px rgba(242, 139, 31, 0.85);
+}
+
+.ecosystem-editorial-container {
+  position: relative;
+  z-index: 2;
+}
+
+.ecosystem-editorial-opening {
+  display: grid;
+  grid-template-columns: minmax(520px, 1.1fr) minmax(390px, 0.9fr);
+  gap: clamp(75px, 9vw, 135px);
+  align-items: end;
+}
+
+.ecosystem-editorial-heading > p,
+.ecosystem-editorial-stack-heading > p {
+  margin: 0 0 26px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f28b1f;
+}
+
+.ecosystem-editorial-heading h2 {
+  max-width: 860px;
+  margin: 0;
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(43px, 4.9vw, 77px);
+  font-weight: 430;
+  line-height: 1.06;
+  letter-spacing: -0.058em;
+  text-wrap: balance;
+}
+
+.ecosystem-editorial-heading h2 strong {
+  display: block;
+  font-weight: 430;
+  color: #7f8a9a;
+}
+
+.ecosystem-editorial-intro {
+  max-width: 555px;
+  padding-left: 42px;
+  border-left: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.ecosystem-editorial-intro p {
+  margin: 0 0 24px;
+  font-size: 16px;
+  line-height: 1.82;
+  color: #9ca8b8;
+}
+
+.ecosystem-editorial-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.ecosystem-editorial-statement {
+  max-width: 1120px;
+  margin: clamp(85px, 9vw, 125px) 0 0 auto;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.ecosystem-editorial-statement p {
+  max-width: 1040px;
+  margin: 0;
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(29px, 3.5vw, 52px);
+  font-weight: 420;
+  line-height: 1.28;
+  letter-spacing: -0.047em;
+  color: #788494;
+}
+
+.ecosystem-editorial-statement strong {
+  display: block;
+  font-weight: 420;
+  color: #f3f6f9;
+}
+
+.ecosystem-editorial-foundations {
+  max-width: 1120px;
+  margin: clamp(65px, 7vw, 95px) 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(60px, 8vw, 110px);
+}
+
+.ecosystem-editorial-foundations article {
+  min-height: 220px;
+  padding: 39px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.105);
+}
+
+.ecosystem-editorial-foundations article:nth-last-child(-n + 2) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.105);
+}
+
+.ecosystem-editorial-foundations h3 {
+  max-width: 450px;
+  margin: 0 0 20px;
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(24px, 2.5vw, 37px);
+  font-weight: 430;
+  line-height: 1.19;
+  letter-spacing: -0.043em;
+}
+
+.ecosystem-editorial-foundations article > p {
+  max-width: 490px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.79;
+  color: #919dae;
+}
+
+.ecosystem-editorial-stack {
+  max-width: 1120px;
+  margin: clamp(70px, 8vw, 105px) 0 0 auto;
+  display: grid;
+  grid-template-columns: minmax(470px, 1.1fr) minmax(350px, 0.9fr);
+  gap: clamp(70px, 8vw, 115px);
+  align-items: start;
+}
+
+.ecosystem-editorial-stack-heading h3 {
+  max-width: 720px;
+  margin: 0;
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(31px, 3.6vw, 54px);
+  font-weight: 430;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.ecosystem-editorial-stack-copy {
+  padding-left: 39px;
+  border-left: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.ecosystem-editorial-stack-copy > p {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #929eaf;
+}
+
+.ecosystem-editorial-stack-copy > a {
+  width: fit-content;
+  margin-top: 30px;
+  padding-bottom: 7px;
+  display: block;
+  border-bottom: 1px solid #f28b1f;
+  font-size: 13px;
+  font-weight: 620;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.ecosystem-editorial-stack-copy > a:hover {
+  border-color: #6ccbff;
+  color: #6ccbff;
+}
+
+@media (max-width: 1000px) {
+  .ecosystem-editorial-opening,
+  .ecosystem-editorial-stack {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .ecosystem-editorial-intro {
+    max-width: 720px;
+  }
+
+  .ecosystem-editorial-statement,
+  .ecosystem-editorial-foundations,
+  .ecosystem-editorial-stack {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .ecosystem-blueprint {
+    right: -20%;
+    width: 620px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ecosystem-editorial {
+    padding: 88px 0;
+  }
+
+  .ecosystem-editorial-heading > p,
+  .ecosystem-editorial-stack-heading > p {
+    margin-bottom: 20px;
+    font-size: 8px;
+  }
+
+  .ecosystem-editorial-heading h2 {
+    font-size: clamp(37px, 10.8vw, 51px);
+    line-height: 1.08;
+  }
+
+  .ecosystem-editorial-intro {
+    padding: 25px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 0;
+  }
+
+  .ecosystem-editorial-intro p {
+    font-size: 15px;
+  }
+
+  .ecosystem-editorial-statement {
+    margin-top: 65px;
+    padding: 31px 0;
+  }
+
+  .ecosystem-editorial-statement p {
+    font-size: 27px;
+  }
+
+  .ecosystem-editorial-foundations {
+    margin-top: 48px;
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-editorial-foundations article {
+    min-height: auto;
+    padding: 31px 0;
+  }
+
+  .ecosystem-editorial-foundations article:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .ecosystem-editorial-foundations article:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.105);
+  }
+
+  .ecosystem-editorial-foundations h3 {
+    font-size: 27px;
+  }
+
+  .ecosystem-editorial-stack {
+    margin-top: 58px;
+  }
+
+  .ecosystem-editorial-stack-heading h3 {
+    font-size: 31px;
+  }
+
+  .ecosystem-editorial-stack-copy {
+    padding: 25px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 0;
+  }
+
+  .ecosystem-blueprint {
+    top: 30%;
+    right: -110%;
+    width: 680px;
+    opacity: 0.16;
+  }
+}
