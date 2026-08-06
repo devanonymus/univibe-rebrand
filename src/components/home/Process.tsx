@@ -1,93 +1,146 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 
-const steps = [
+const principles = [
   {
-    number: "01",
-    title: "Analisi",
+    title: "Comprendere prima di proporre",
     description:
-      "Studiamo il contesto aziendale, i processi, le criticità e le opportunità prima di proporre qualsiasi tecnologia.",
+      "Analizziamo il contesto, i processi, le persone coinvolte e il problema reale. Una soluzione corretta non può nascere da una richiesta interpretata superficialmente.",
   },
   {
-    number: "02",
-    title: "Strategia",
+    title: "Progettare il sistema completo",
     description:
-      "Definiamo obiettivi, priorità, architettura della soluzione, tempi e indicatori di risultato.",
+      "Definiamo come devono lavorare insieme dati, software, infrastrutture, automazioni e responsabilità. Evitiamo interventi isolati che spostano semplicemente il problema.",
   },
   {
-    number: "03",
-    title: "Progettazione",
+    title: "Realizzare per fasi verificabili",
     description:
-      "Disegniamo esperienza, infrastruttura, flussi, dati e integrazioni in modo coerente e scalabile.",
+      "Quando il progetto lo consente, procediamo attraverso rilasci progressivi. L’azienda può utilizzare, valutare e migliorare il sistema senza attendere mesi prima di vedere un risultato.",
   },
   {
-    number: "04",
-    title: "Sviluppo",
+    title: "Misurare ciò che cambia",
     description:
-      "Trasformiamo la strategia in software, automazioni e sistemi digitali testabili e realmente utilizzabili.",
-  },
-  {
-    number: "05",
-    title: "Lancio",
-    description:
-      "Configuriamo ambienti, monitoraggio, formazione e processi necessari per una partenza controllata.",
-  },
-  {
-    number: "06",
-    title: "Evoluzione",
-    description:
-      "Analizziamo dati e utilizzo reale per migliorare continuamente performance, sicurezza e risultati.",
+      "Il progetto non termina con la consegna. Verifichiamo utilizzo, criticità, prestazioni e impatto operativo per capire cosa mantenere, correggere o potenziare.",
   },
 ];
 
 export default function Process() {
   return (
-    <section className="process-section" id="metodo">
-      <div className="process-background" aria-hidden="true">
-        <div className="process-glow" />
-        <span>PROCESS</span>
+    <section className="method-editorial" id="metodo">
+      <div className="method-editorial-background" aria-hidden="true">
+        <div className="method-editorial-glow" />
+        <span>METHOD</span>
       </div>
 
-      <div className="section-container process-container">
-        <div className="process-heading">
-          <div className="section-label">
-            <span>04</span>
-            <p>Metodo</p>
-          </div>
-
-          <div>
-            <p className="section-kicker">Dal problema alla soluzione</p>
+      <div className="section-container method-editorial-container">
+        <div className="method-editorial-opening">
+          <motion.div
+            className="method-editorial-heading"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            <p>Il nostro metodo</p>
 
             <h2>
-              Un processo chiaro.
-              <span> Nessuna tecnologia scelta a caso.</span>
+              Non partiamo dalla tecnologia.
+              <strong> Partiamo da ciò che deve cambiare.</strong>
             </h2>
-          </div>
+          </motion.div>
+
+          <motion.div
+            className="method-editorial-intro"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.75, delay: 0.08 }}
+          >
+            <p>
+              Molti progetti digitali iniziano nel modo sbagliato: con una
+              lista di funzionalità, una piattaforma già scelta o un
+              preventivo costruito prima di comprendere il problema.
+            </p>
+
+            <p>
+              Noi seguiamo il percorso opposto. Prima individuiamo ciò che
+              rallenta, disperde risorse o limita la crescita. Solo dopo
+              definiamo quale sistema può produrre il cambiamento necessario.
+            </p>
+          </motion.div>
         </div>
 
-        <div className="process-list">
-          {steps.map((step, index) => (
+        <motion.div
+          className="method-editorial-question"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p>
+            La domanda non è:
+            <span>“Quale software vuoi realizzare?”</span>
+          </p>
+
+          <p>
+            La domanda corretta è:
+            <strong>
+              “Quale problema deve smettere di esistere dopo il progetto?”
+            </strong>
+          </p>
+        </motion.div>
+
+        <div className="method-editorial-principles">
+          {principles.map((principle, index) => (
             <motion.article
-              key={step.number}
-              className="process-step"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.65 }}
+              key={principle.title}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.28 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.05,
+              }}
             >
-              <div className="process-number">{step.number}</div>
-
-              <div className="process-step-content">
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-
-              <div className="process-line">
-                <span />
-              </div>
+              <h3>{principle.title}</h3>
+              <p>{principle.description}</p>
             </motion.article>
           ))}
+        </div>
+
+        <div className="method-editorial-result">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75 }}
+          >
+            <p>Il risultato</p>
+
+            <h3>
+              Un progetto comprensibile, governabile e costruito per essere
+              utilizzato realmente.
+            </h3>
+          </motion.div>
+
+          <motion.div
+            className="method-editorial-result-copy"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.75, delay: 0.08 }}
+          >
+            <p>
+              L’azienda conosce la direzione, comprende le priorità e può
+              valutare progressivamente il valore prodotto.
+            </p>
+
+            <Link href="#contatti">
+              Raccontaci il problema da risolvere
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>
