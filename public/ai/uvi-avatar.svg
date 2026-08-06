@@ -1,0 +1,58 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="background" x1="18" y1="12" x2="145" y2="151" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D42E5A"/>
+      <stop offset="0.46" stop-color="#F28B1F"/>
+      <stop offset="1" stop-color="#3E8DFF"/>
+    </linearGradient>
+
+    <linearGradient id="face" x1="54" y1="43" x2="111" y2="126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7D9C5"/>
+      <stop offset="1" stop-color="#D8A98D"/>
+    </linearGradient>
+
+    <linearGradient id="jacket" x1="44" y1="113" x2="121" y2="157" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101C2E"/>
+      <stop offset="1" stop-color="#07101C"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <circle cx="80" cy="80" r="78" fill="#07101C"/>
+  <circle cx="80" cy="80" r="77" stroke="url(#background)" stroke-width="2"/>
+
+  <circle cx="42" cy="35" r="18" fill="#D42E5A" fill-opacity="0.20" filter="url(#glow)"/>
+  <circle cx="122" cy="39" r="22" fill="#3E8DFF" fill-opacity="0.22" filter="url(#glow)"/>
+
+  <path d="M33 158C37 127 53 111 80 111C107 111 123 127 127 158H33Z" fill="url(#jacket)"/>
+
+  <path d="M67 108H93V125C89 131 84 134 80 134C76 134 71 131 67 125V108Z" fill="url(#face)"/>
+
+  <ellipse cx="80" cy="77" rx="33" ry="42" fill="url(#face)"/>
+
+  <path d="M48 68C49 40 64 28 82 28C104 28 115 43 113 68C105 57 96 52 85 50C70 47 60 54 48 68Z" fill="#172235"/>
+
+  <path d="M50 65C55 53 65 47 80 47C94 47 104 53 111 65C108 45 98 33 81 33C64 33 53 45 50 65Z" fill="#202D43"/>
+
+  <ellipse cx="66.5" cy="77" rx="3.1" ry="3.6" fill="#162034"/>
+  <ellipse cx="93.5" cy="77" rx="3.1" ry="3.6" fill="#162034"/>
+
+  <path d="M60 70C64 67 69 67 73 70" stroke="#5D4036" stroke-width="2" stroke-linecap="round"/>
+  <path d="M87 70C91 67 96 67 100 70" stroke="#5D4036" stroke-width="2" stroke-linecap="round"/>
+
+  <path d="M80 79V91" stroke="#B77E66" stroke-width="2" stroke-linecap="round"/>
+  <path d="M74 98C78 101 83 101 87 98" stroke="#8A4C4C" stroke-width="2.3" stroke-linecap="round"/>
+
+  <path d="M53 115L70 126L80 150L47 156L53 115Z" fill="#142238"/>
+  <path d="M107 115L90 126L80 150L113 156L107 115Z" fill="#0D192B"/>
+
+  <path d="M70 126L80 134L90 126L84 151H76L70 126Z" fill="#F3F5F8"/>
+  <path d="M77 135H83L86 153H74L77 135Z" fill="url(#background)"/>
+
+  <circle cx="128" cy="128" r="13" fill="#07101C"/>
+  <circle cx="128" cy="128" r="11" fill="#5BE39A"/>
+  <circle cx="128" cy="128" r="11" fill="#5BE39A" fill-opacity="0.40" filter="url(#glow)"/>
+</svg>

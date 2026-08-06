@@ -4,6 +4,7 @@ import {
   assistants,
   type AssistantId,
 } from "@/lib/ai/assistants";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type Message = {
@@ -33,9 +34,11 @@ export default function AIChat() {
   const [open, setOpen] = useState(false);
   const [assistantId, setAssistantId] =
     useState<AssistantId>("advisor");
+
   const [messages, setMessages] = useState<Message[]>([
     createMessage("assistant", assistants.advisor.welcome),
   ]);
+
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -47,14 +50,35 @@ export default function AIChat() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({
       behavior: "smooth",
+      block: "nearest",
     });
   }, [messages, loading]);
 
   useEffect(() => {
-    if (open) {
-      window.setTimeout(() => inputRef.current?.focus(), 200);
+    if (!open) {
+      return;
     }
+
+    const focusTimeout = window.setTimeout(() => {
+      inputRef.current?.focus();
+    }, 250);
+
+    return () => window.clearTimeout(focusTimeout);
   }, [open]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const changeAssistant = (nextAssistantId: AssistantId) => {
     setAssistantId(nextAssistantId);
@@ -67,8 +91,8 @@ export default function AIChat() {
     setInput("");
   };
 
-  const sendMessage = async (text?: string) => {
-    const content = (text ?? input).trim();
+  const sendMessage = async (presetText?: string) => {
+    const content = (presetText ?? input).trim();
 
     if (!content || loading) {
       return;
@@ -89,9 +113,9 @@ export default function AIChat() {
         },
         body: JSON.stringify({
           assistant: assistantId,
-          messages: nextMessages.map(({ role, content }) => ({
+          messages: nextMessages.map(({ role, content: value }) => ({
             role,
-            content,
+            content: value,
           })),
         }),
       });
@@ -102,7 +126,7 @@ export default function AIChat() {
       };
 
       if (!response.ok || !data.reply) {
-        throw new Error(data.error ?? "Errore chat");
+        throw new Error(data.error ?? "Errore durante la risposta");
       }
 
       setMessages((current) => [
@@ -114,7 +138,7 @@ export default function AIChat() {
         ...current,
         createMessage(
           "assistant",
-          "In questo momento non riesco a rispondere. Puoi scriverci direttamente tramite WhatsApp o email."
+          "In questo momento non riesco a completare la risposta. Puoi riprovare oppure richiedere direttamente un confronto con il team Univibe."
         ),
       ]);
     } finally {
@@ -123,46 +147,79 @@ export default function AIChat() {
   };
 
   return (
-    <div className={`ai-chat ${open ? "is-open" : ""}`}>
+    <div className={`uvi-chat ${open ? "is-open" : ""}`}>
       <button
         type="button"
-        className="ai-chat-launcher"
-        aria-label={open ? "Chiudi assistente AI" : "Apri assistente AI"}
+        className="uvi-launcher"
+        aria-label={open ? "Chiudi UVI" : "Apri UVI"}
         aria-expanded={open}
         onClick={() => setOpen((current) => !current)}
       >
-        <span className="ai-chat-launcher-symbol">AI</span>
+        <span className="uvi-launcher-avatar">
+          <Image
+            src="/ai/uvi-avatar.svg"
+            alt=""
+            width={54}
+            height={54}
+          />
+          <i />
+        </span>
 
-        <span className="ai-chat-launcher-copy">
-          <strong>Assistente Univibe</strong>
-          <small>Parliamo del tuo progetto</small>
+        <span className="uvi-launcher-copy">
+          <strong>Parla con UVI</strong>
+          <small>Il consulente AI di Univibe</small>
         </span>
       </button>
 
       <section
-        className="ai-chat-panel"
-        aria-label="Assistente AI Univibe"
+        className="uvi-panel"
+        aria-label="UVI, assistente digitale Univibe"
         aria-hidden={!open}
       >
-        <header className="ai-chat-header">
-          <div>
-            <span className="ai-chat-status" />
+        <header className="uvi-header">
+          <div className="uvi-identity">
+            <div className="uvi-avatar">
+              <Image
+                src="/ai/uvi-avatar.svg"
+                alt="UVI, assistente digitale di Univibe"
+                width={54}
+                height={54}
+                priority={false}
+              />
+
+              <span className="uvi-online-status" />
+            </div>
+
             <div>
-              <strong>{assistant.name}</strong>
-              <small>{assistant.role}</small>
+              <div className="uvi-name-row">
+                <strong>{assistant.name}</strong>
+                <span>AI</span>
+              </div>
+
+              <p>{assistant.role}</p>
+
+              <small>
+                <i />
+                Online adesso
+              </small>
             </div>
           </div>
 
           <button
             type="button"
-            aria-label="Chiudi chat"
+            className="uvi-close"
+            aria-label="Chiudi UVI"
             onClick={() => setOpen(false)}
           >
-            ×
+            <span />
+            <span />
           </button>
         </header>
 
-        <div className="ai-chat-assistants">
+        <nav
+          className="uvi-modes"
+          aria-label="Seleziona l'ambito di consulenza"
+        >
           {assistantOrder.map((id) => (
             <button
               key={id}
@@ -170,28 +227,45 @@ export default function AIChat() {
               className={assistantId === id ? "is-active" : ""}
               onClick={() => changeAssistant(id)}
             >
-              {assistants[id].role}
+              {assistants[id].shortName}
             </button>
           ))}
-        </div>
+        </nav>
 
-        <div className="ai-chat-messages" aria-live="polite">
+        <div className="uvi-conversation" aria-live="polite">
           {messages.map((message) => (
-            <div
+            <article
               key={message.id}
-              className={`ai-chat-message ai-chat-message-${message.role}`}
+              className={`uvi-message uvi-message-${message.role}`}
             >
-              <p>{message.content}</p>
-            </div>
+              {message.role === "assistant" && (
+                <Image
+                  src="/ai/uvi-avatar.svg"
+                  alt=""
+                  width={30}
+                  height={30}
+                />
+              )}
+
+              <div>
+                {message.role === "assistant" && (
+                  <span>UVI</span>
+                )}
+
+                <p>{message.content}</p>
+              </div>
+            </article>
           ))}
 
           {messages.length === 1 && (
-            <div className="ai-chat-suggestions">
+            <div className="uvi-suggestions">
+              <span>Puoi iniziare da qui</span>
+
               {assistant.suggestions.map((suggestion) => (
                 <button
                   type="button"
                   key={suggestion}
-                  onClick={() => sendMessage(suggestion)}
+                  onClick={() => void sendMessage(suggestion)}
                 >
                   {suggestion}
                 </button>
@@ -200,52 +274,70 @@ export default function AIChat() {
           )}
 
           {loading && (
-            <div className="ai-chat-message ai-chat-message-assistant">
-              <div className="ai-chat-typing" aria-label="Sto scrivendo">
-                <span />
-                <span />
-                <span />
+            <article className="uvi-message uvi-message-assistant">
+              <Image
+                src="/ai/uvi-avatar.svg"
+                alt=""
+                width={30}
+                height={30}
+              />
+
+              <div>
+                <span>UVI sta analizzando</span>
+
+                <div
+                  className="uvi-typing"
+                  aria-label="UVI sta scrivendo"
+                >
+                  <i />
+                  <i />
+                  <i />
+                </div>
               </div>
-            </div>
+            </article>
           )}
 
           <div ref={messagesEndRef} />
         </div>
 
         <form
-          className="ai-chat-form"
+          className="uvi-composer"
           onSubmit={(event) => {
             event.preventDefault();
             void sendMessage();
           }}
         >
-          <textarea
-            ref={inputRef}
-            value={input}
-            maxLength={1800}
-            rows={1}
-            placeholder="Descrivi ciò che vuoi migliorare..."
-            onChange={(event) => setInput(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter" && !event.shiftKey) {
-                event.preventDefault();
-                void sendMessage();
-              }
-            }}
-          />
+          <div className="uvi-input-shell">
+            <textarea
+              ref={inputRef}
+              value={input}
+              rows={1}
+              maxLength={1800}
+              aria-label="Scrivi un messaggio a UVI"
+              placeholder="Descrivi il tuo progetto..."
+              onChange={(event) => setInput(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" && !event.shiftKey) {
+                  event.preventDefault();
+                  void sendMessage();
+                }
+              }}
+            />
 
-          <button
-            type="submit"
-            disabled={!input.trim() || loading}
-          >
-            Invia
-          </button>
+            <button
+              type="submit"
+              aria-label="Invia messaggio"
+              disabled={!input.trim() || loading}
+            >
+              <span>→</span>
+            </button>
+          </div>
+
+          <p>
+            UVI utilizza l’intelligenza artificiale. Non inserire dati
+            sensibili.
+          </p>
         </form>
-
-        <p className="ai-chat-privacy">
-          Non inserire dati sensibili. Le risposte dell’AI possono contenere
-          imprecisioni.
-        </p>
       </section>
     </div>
   );
