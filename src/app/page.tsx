@@ -1,11 +1,11 @@
-import FinalCta from "@/components/home/FinalCta";
-import Hero from "@/components/home/Hero";
-import Manifesto from "@/components/home/Manifesto";
-import Process from "@/components/home/Process";
-import Projects from "@/components/home/Projects";
-import Services from "@/components/home/Services";
-import Stats from "@/components/home/Stats";
-import Technology from "@/components/home/Technology";
+import Ecosystem from "@/components/home-v2/Ecosystem";
+import FinalCta from "@/components/home-v2/FinalCta";
+import Hero from "@/components/home-v2/Hero";
+import Impact from "@/components/home-v2/Impact";
+import Manifesto from "@/components/home-v2/Manifesto";
+import Method from "@/components/home-v2/Method";
+import Projects from "@/components/home-v2/Projects";
+import Transformation from "@/components/home-v2/Transformation";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 
@@ -17,10 +17,10 @@ export default function Home() {
       <main>
         <Hero />
         <Manifesto />
-        <Services />
-        <Stats />
-        <Process />
-        <Technology />
+        <Transformation />
+        <Impact />
+        <Method />
+        <Ecosystem />
         <Projects />
         <FinalCta />
       </main>
