@@ -43,3 +43,7 @@ next-env.d.ts
 # Local backup files
 src/app/globals-before-*.css
 src/components/home/*-before-*.tsx
+.env.local
+
+# Local backup files
+src/components/layout/*-before-*.tsx
