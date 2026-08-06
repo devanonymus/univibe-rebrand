@@ -5,11 +5,13 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,6 +28,10 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={`${inter.variable} ${sora.variable}`}>
+        <a className="skip-to-content" href="#main-content">
+          Vai al contenuto
+        </a>
+
         {children}
       </body>
     </html>
