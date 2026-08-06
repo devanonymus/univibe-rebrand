@@ -29,10 +29,6 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={`${inter.variable} ${sora.variable}`}>
-        <a className="skip-to-content" href="#main-content">
-          Vai al contenuto
-        </a>
-
         {children}
         <AIChat />
       </body>
