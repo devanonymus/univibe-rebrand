@@ -4,6 +4,7 @@
 @import "../styles/mega-menu.css";
 @import "../styles/ai-chat.css";
 @import "../styles/responsive.css";
+@import "../styles/navbar.css";
 
 :root {
   --background: #050b14;
@@ -2333,22 +2334,7 @@ a {
     width: 21px;
     height: 1px;
     background: white;
-  }
-
-  .editorial-mobile-navigation {
-    width: calc(100% - 56px);
-    max-width: 1460px;
-    margin: 10px auto 0;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 15px;
-    background: rgba(3, 9, 17, 0.97);
-    backdrop-filter: blur(24px);
-  }
-
-  .editorial-mobile-navigation a {
+  }  .editorial-mobile-navigation a {
     padding: 15px 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.09);
     font-size: 14px;
@@ -2394,13 +2380,7 @@ a {
 
   .editorial-brand small {
     display: none;
-  }
-
-  .editorial-mobile-navigation {
-    width: calc(100% - 24px);
-  }
-
-  .hero-editorial {
+  }  .hero-editorial {
     min-height: auto;
     padding: 125px 20px 42px;
   }
