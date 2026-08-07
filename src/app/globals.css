@@ -3,6 +3,7 @@
 @import "../styles/sizing.css";
 @import "../styles/mega-menu.css";
 @import "../styles/ai-chat.css";
+@import "../styles/responsive.css";
 
 :root {
   --background: #050b14;
@@ -8993,4 +8994,26 @@ a {
     flex-direction: column;
     gap: 24px;
   }
+}
+
+
+/* ==========================================
+   ACCESSIBILITY SKIP LINK
+========================================== */
+
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:0;
+  z-index:9999;
+  padding:12px 18px;
+  background:#111827;
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+}
+
+.skip-link:focus{
+  left:20px;
+  top:20px;
 }
