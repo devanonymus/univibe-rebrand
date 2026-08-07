@@ -1634,3 +1634,169 @@ h3 {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* =========================================================
+   MOBILE NAVIGATION — VISIBILITY FIX
+========================================================= */
+
+@media (max-width: 899px) {
+  .editorial-mobile-navigation {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transform: translateY(-10px) scale(0.985);
+
+    transition:
+      opacity 180ms ease,
+      transform 220ms ease,
+      max-height 260ms ease,
+      visibility 260ms ease;
+  }
+
+  .editorial-mobile-navigation.is-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+
+    max-height: calc(100svh - 85px);
+    overflow-y: auto;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MOBILE NAV — DEFINITIVE OPEN/CLOSE FIX
+========================================================= */
+
+@media (max-width: 899px) {
+
+  /* CHIUSO */
+  .editorial-mobile-navigation {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* APERTO */
+  .editorial-mobile-navigation.is-visible {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    width: calc(100vw - 28px);
+    max-height: calc(100svh - 82px);
+    margin: 8px auto 0;
+
+    padding: 12px 14px;
+
+    flex-direction: column;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+
+    background: rgba(3, 9, 17, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    box-shadow:
+      0 24px 70px rgba(0, 0, 0, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  }
+}
+
+@media (max-width: 479px) {
+  .editorial-mobile-navigation.is-visible {
+    width: calc(100vw - 16px);
+    max-height: calc(100svh - 72px);
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+}
+
+/* =========================================================
+   MOBILE NAVIGATION — SINGLE SOURCE OF TRUTH
+========================================================= */
+
+@media (max-width: 899px) {
+  .editorial-mobile-navigation {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+
+    width: calc(100vw - 28px);
+    max-height: 0;
+
+    margin: 8px auto 0;
+    padding: 0 14px;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid transparent;
+    border-radius: 16px;
+
+    background: rgba(3, 9, 17, 0.98);
+
+    box-shadow: none;
+
+    transform: translateY(-8px);
+  }
+
+  .editorial-mobile-navigation.is-visible {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    max-height: calc(100svh - 86px);
+
+    padding: 12px 14px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border-color: rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+      0 24px 70px rgba(0, 0, 0, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    transform: translateY(0);
+  }
+
+  .editorial-mobile-navigation > a,
+  .mobile-services-navigation {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .editorial-mobile-navigation,
+  .editorial-mobile-navigation.is-visible {
+    width: calc(100vw - 16px);
+    margin-top: 6px;
+    border-radius: 14px;
+  }
+
+  .editorial-mobile-navigation.is-visible {
+    max-height: calc(100svh - 72px);
+    padding: 10px 12px;
+  }
+}
