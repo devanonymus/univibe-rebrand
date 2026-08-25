@@ -109,13 +109,27 @@ export async function POST(request: Request) {
         role: message.role,
         content: message.content,
       })),
-      max_output_tokens: 350,
+      reasoning: {
+        effort: "low",
+      },
+      text: {
+        verbosity: "low",
+      },
+      max_output_tokens: 800,
       store: false,
     });
 
-    const reply = response.output_text.trim();
+    const reply = response.output_text?.trim() ?? "";
 
     if (!reply) {
+      console.error("OpenAI response without text:", {
+        id: response.id,
+        status: response.status,
+        incompleteDetails: response.incomplete_details,
+        output: response.output,
+        usage: response.usage,
+      });
+
       throw new Error("Risposta AI vuota.");
     }
 
