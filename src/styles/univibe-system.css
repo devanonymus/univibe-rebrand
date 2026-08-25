@@ -1,0 +1,1517 @@
+/* =========================================================
+   UNIVIBE GROUP — GLOBAL VISUAL SYSTEM
+   Shared language, different compositions
+========================================================= */
+
+:root {
+  /* COLORS */
+  --uv-bg: #050b14;
+  --uv-bg-deep: #030811;
+  --uv-bg-soft: #08111d;
+
+  --uv-surface: rgba(255, 255, 255, 0.025);
+  --uv-surface-hover: rgba(255, 255, 255, 0.04);
+
+  --uv-white: #f4f6f8;
+  --uv-text: #a1acba;
+  --uv-muted: #747f8f;
+
+  --uv-border: rgba(255, 255, 255, 0.09);
+  --uv-border-strong: rgba(255, 255, 255, 0.14);
+
+  --uv-red: #d42e5a;
+  --uv-orange: #f28b1f;
+  --uv-blue: #3e8dff;
+  --uv-cyan: #6ccbff;
+
+  /* CONTAINER */
+  --uv-container: 1280px;
+  --uv-container-reading: 720px;
+
+  --uv-gutter: clamp(20px, 3.2vw, 42px);
+
+  /* SPACE */
+  --uv-section-y: clamp(88px, 7.5vw, 118px);
+  --uv-section-y-small: clamp(68px, 5.5vw, 88px);
+
+  /* TYPE */
+  --uv-display:
+    clamp(54px, 5.1vw, 82px);
+
+  --uv-page-title:
+    clamp(48px, 4.7vw, 74px);
+
+  --uv-section-title:
+    clamp(40px, 4vw, 62px);
+
+  --uv-statement:
+    clamp(27px, 2.7vw, 42px);
+
+  --uv-card-title:
+    clamp(24px, 2.2vw, 34px);
+
+  --uv-lead:
+    clamp(17px, 1.3vw, 20px);
+
+  --uv-body: 15px;
+  --uv-small: 12px;
+  --uv-micro: 8px;
+
+  /* SHAPE */
+  --uv-radius-sm: 9px;
+  --uv-radius-md: 14px;
+  --uv-radius-lg: 18px;
+
+  /* MOTION */
+  --uv-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   GLOBAL FOUNDATION
+========================================================= */
+
+html {
+  background: var(--uv-bg);
+}
+
+body {
+  background: var(--uv-bg);
+  color: var(--uv-white);
+}
+
+main {
+  overflow: clip;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(212, 46, 90, 0.72);
+}
+
+
+/* =========================================================
+   CONTAINERS
+========================================================= */
+
+.section-container,
+.uv-container {
+  width:
+    min(
+      var(--uv-container),
+      calc(100% - (var(--uv-gutter) * 2))
+    );
+
+  margin-inline: auto;
+}
+
+.uv-reading {
+  max-width: var(--uv-container-reading);
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.uv-display,
+.uv-page-title,
+.uv-section-title,
+.uv-statement {
+  font-family: var(--font-sora), sans-serif;
+
+  font-weight: 430;
+
+  text-wrap: balance;
+}
+
+.uv-display {
+  font-size: var(--uv-display);
+
+  line-height: 0.99;
+
+  letter-spacing: -0.06em;
+}
+
+.uv-page-title {
+  font-size: var(--uv-page-title);
+
+  line-height: 1.01;
+
+  letter-spacing: -0.057em;
+}
+
+.uv-section-title {
+  font-size: var(--uv-section-title);
+
+  line-height: 1.04;
+
+  letter-spacing: -0.052em;
+}
+
+.uv-statement {
+  font-size: var(--uv-statement);
+
+  line-height: 1.24;
+
+  letter-spacing: -0.043em;
+}
+
+.uv-body {
+  color: var(--uv-text);
+
+  font-size: var(--uv-body);
+
+  line-height: 1.72;
+}
+
+
+/* =========================================================
+   EYEBROW / LABEL
+========================================================= */
+
+.uv-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--uv-orange);
+
+  font-size: var(--uv-micro);
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.uv-eyebrow::before {
+  width: 20px;
+
+  height: 1px;
+
+  content: "";
+
+  flex: 0 0 auto;
+
+  background: currentColor;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.uv-section {
+  position: relative;
+
+  padding:
+    var(--uv-section-y)
+    0;
+
+  border-bottom:
+    1px solid
+    var(--uv-border);
+}
+
+.uv-section-soft {
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(62, 141, 255, 0.045),
+      transparent 32%
+    ),
+    var(--uv-bg);
+}
+
+
+/* =========================================================
+   EDITORIAL HEADER
+========================================================= */
+
+.uv-editorial-head {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(300px, 0.55fr);
+
+  gap:
+    clamp(
+      60px,
+      7vw,
+      105px
+    );
+
+  align-items: end;
+}
+
+.uv-editorial-head-copy {
+  padding-left: 30px;
+
+  border-left:
+    1px solid
+    var(--uv-border);
+}
+
+.uv-editorial-head-copy p {
+  margin: 0 0 18px;
+
+  color: var(--uv-text);
+
+  font-size: var(--uv-body);
+
+  line-height: 1.72;
+}
+
+.uv-editorial-head-copy p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.uv-button-primary,
+.uv-button-secondary {
+  min-height: 47px;
+
+  padding:
+    0
+    18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: var(--uv-radius-sm);
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.uv-button-primary {
+  color: #fff;
+
+  background:
+    linear-gradient(
+      110deg,
+      var(--uv-red),
+      #ed5e30 52%,
+      var(--uv-orange)
+    );
+}
+
+.uv-button-secondary {
+  border:
+    1px solid
+    var(--uv-border-strong);
+
+  color: #eef2f6;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+.uv-button-primary:hover,
+.uv-button-secondary:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TEXT LINK
+========================================================= */
+
+.uv-text-link {
+  width: fit-content;
+
+  padding-bottom: 6px;
+
+  display: inline-flex;
+
+  border-bottom:
+    1px solid
+    var(--uv-orange);
+
+  color: var(--uv-white);
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.uv-text-link:hover {
+  color: var(--uv-cyan);
+
+  border-color: var(--uv-cyan);
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.uv-card {
+  border:
+    1px solid
+    var(--uv-border);
+
+  border-radius:
+    var(--uv-radius-md);
+
+  background:
+    var(--uv-surface);
+
+  transition:
+    transform 220ms var(--uv-ease),
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.uv-card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(
+      108,
+      203,
+      255,
+      0.17
+    );
+
+  background:
+    var(--uv-surface-hover);
+}
+
+
+/* =========================================================
+   STATEMENT BLOCK
+========================================================= */
+
+.uv-statement-block {
+  padding:
+    27px
+    0;
+
+  border-top:
+    1px solid
+    var(--uv-border);
+
+  border-bottom:
+    1px solid
+    var(--uv-border);
+}
+
+.uv-statement-block p {
+  max-width: 960px;
+
+  margin: 0;
+
+  color: var(--uv-muted);
+
+  font-family:
+    var(--font-sora),
+    sans-serif;
+
+  font-size:
+    var(--uv-statement);
+
+  line-height: 1.25;
+
+  letter-spacing: -0.043em;
+}
+
+.uv-statement-block strong {
+  display: block;
+
+  color:
+    var(--uv-white);
+
+  font-weight: 430;
+}
+
+
+/* =========================================================
+   DIVIDERS
+========================================================= */
+
+.uv-divider {
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    var(--uv-border);
+}
+
+
+/* =========================================================
+   SERVICE / DETAIL PAGES
+========================================================= */
+
+.conversion-page,
+.service-detail-page,
+.sales-service-page {
+  background:
+    var(--uv-bg);
+
+  color:
+    var(--uv-white);
+}
+
+
+/* HERO PAGINE INTERNE */
+
+.conversion-hero,
+.service-detail-hero,
+.sales-service-hero {
+  position: relative;
+
+  min-height: 78svh;
+
+  padding:
+    clamp(
+      145px,
+      12vw,
+      185px
+    )
+    0
+    clamp(
+      75px,
+      7vw,
+      105px
+    );
+
+  display: flex;
+
+  align-items: flex-end;
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid
+    var(--uv-border);
+
+  background:
+    radial-gradient(
+      circle at 88% 22%,
+      rgba(62, 141, 255, 0.08),
+      transparent 29%
+    ),
+    var(--uv-bg);
+}
+
+.conversion-hero h1,
+.service-detail-hero h1,
+.sales-service-hero h1 {
+  max-width: 930px;
+
+  margin: 0;
+
+  font-family:
+    var(--font-sora),
+    sans-serif;
+
+  font-size:
+    var(--uv-page-title);
+
+  font-weight: 430;
+
+  line-height: 1.01;
+
+  letter-spacing: -0.058em;
+}
+
+
+/* INTERNAL SECTIONS */
+
+.conversion-page section:not(.conversion-hero),
+.service-detail-page section:not(.service-detail-hero),
+.sales-service-page section:not(.sales-service-hero) {
+  padding-top:
+    var(--uv-section-y-small);
+
+  padding-bottom:
+    var(--uv-section-y-small);
+}
+
+
+/* INTERNAL HEADINGS */
+
+.conversion-page h2,
+.service-detail-page h2,
+.sales-service-page h2 {
+  font-family:
+    var(--font-sora),
+    sans-serif;
+
+  font-size:
+    clamp(
+      34px,
+      3.6vw,
+      54px
+    );
+
+  font-weight: 430;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.05em;
+}
+
+
+/* INTERNAL COPY */
+
+.conversion-page p,
+.service-detail-page p,
+.sales-service-page p {
+  color:
+    var(--uv-text);
+
+  line-height: 1.72;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 699px) {
+  :root {
+    --uv-gutter: 18px;
+
+    --uv-section-y: 68px;
+
+    --uv-section-y-small: 58px;
+
+    --uv-display:
+      clamp(
+        36px,
+        9.5vw,
+        44px
+      );
+
+    --uv-page-title:
+      clamp(
+        35px,
+        9.3vw,
+        43px
+      );
+
+    --uv-section-title:
+      clamp(
+        31px,
+        8.4vw,
+        39px
+      );
+
+    --uv-statement:
+      clamp(
+        23px,
+        6.6vw,
+        29px
+      );
+
+    --uv-body: 14px;
+  }
+
+  .uv-editorial-head {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .uv-editorial-head-copy {
+    padding:
+      20px
+      0
+      0;
+
+    border-top:
+      1px solid
+      var(--uv-border);
+
+    border-left: 0;
+  }
+
+  .conversion-hero,
+  .service-detail-hero,
+  .sales-service-hero {
+    min-height: auto;
+
+    padding:
+      108px
+      0
+      64px;
+  }
+
+  .conversion-hero h1,
+  .service-detail-hero h1,
+  .sales-service-hero h1 {
+    font-size:
+      var(--uv-page-title);
+  }
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+========================================================= */
+
+@media (min-width: 1800px) {
+  :root {
+    --uv-container: 1400px;
+  }
+}
+
+
+/* =========================================================
+   NEXT SERVICE / CONTINUE EXPLORING
+   Shared internal-page navigation
+========================================================= */
+
+.conversion-next-service,
+.sales-next-service,
+.service-detail-navigation {
+  position: relative;
+
+  padding:
+    clamp(62px, 6vw, 82px)
+    0;
+
+  overflow: hidden;
+
+  border-top:
+    1px solid
+    var(--uv-border);
+
+  border-bottom:
+    1px solid
+    var(--uv-border);
+
+  background:
+    radial-gradient(
+      circle at 88% 45%,
+      rgba(62, 141, 255, 0.045),
+      transparent 32%
+    ),
+    var(--uv-bg-deep);
+}
+
+
+/* COMMON CONTAINERS */
+
+.conversion-next-service-layout,
+.sales-next-service > .section-container,
+.service-detail-navigation-grid {
+  width:
+    min(
+      var(--uv-container),
+      calc(
+        100% -
+        (var(--uv-gutter) * 2)
+      )
+    );
+
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   CONVERSION NEXT SERVICE
+========================================================= */
+
+.conversion-next-service-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 0.38fr)
+    minmax(0, 1fr);
+
+  gap:
+    clamp(
+      60px,
+      8vw,
+      130px
+    );
+
+  align-items: center;
+}
+
+
+/* LEFT LABEL */
+
+.conversion-next-service-layout > div:first-child,
+.sales-next-service > .section-container > div:first-child,
+.service-detail-navigation-grid > div:first-child {
+  align-self: start;
+}
+
+.conversion-next-service-layout > div:first-child > span,
+.sales-next-service > .section-container > div:first-child > span,
+.service-detail-navigation-grid > div:first-child > span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    var(--uv-orange);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+}
+
+.conversion-next-service-layout > div:first-child > span::before,
+.sales-next-service > .section-container > div:first-child > span::before,
+.service-detail-navigation-grid > div:first-child > span::before {
+  width: 20px;
+  height: 1px;
+
+  content: "";
+
+  background: currentColor;
+}
+
+
+/* =========================================================
+   NEXT SERVICE LINK
+========================================================= */
+
+.conversion-next-service-layout > a,
+.sales-next-service a,
+.service-detail-navigation-grid > a {
+  position: relative;
+
+  min-height: 180px;
+
+  padding:
+    28px
+    32px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--uv-border);
+
+  border-radius:
+    var(--uv-radius-md);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.018
+    );
+
+  text-decoration: none;
+
+  transition:
+    transform 220ms var(--uv-ease),
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.conversion-next-service-layout > a:hover,
+.sales-next-service a:hover,
+.service-detail-navigation-grid > a:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(
+      108,
+      203,
+      255,
+      0.18
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.028
+    );
+}
+
+
+/* MICRO LABEL */
+
+.conversion-next-service-layout > a > span:first-child,
+.sales-next-service a > span:first-child,
+.service-detail-navigation-grid > a > span:first-child {
+  color:
+    var(--uv-muted);
+
+  font-size: 8px;
+
+  font-weight: 650;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* TITLE */
+
+.conversion-next-service-layout > a h2,
+.conversion-next-service-layout > a h3,
+.sales-next-service a h2,
+.sales-next-service a h3,
+.service-detail-navigation-grid > a h2,
+.service-detail-navigation-grid > a h3 {
+  max-width: 720px;
+
+  margin:
+    15px
+    0
+    0;
+
+  color:
+    var(--uv-white);
+
+  font-family:
+    var(--font-sora),
+    sans-serif;
+
+  font-size:
+    clamp(
+      30px,
+      3.1vw,
+      48px
+    );
+
+  font-weight: 430;
+
+  line-height: 1.04;
+
+  letter-spacing: -0.05em;
+}
+
+
+/* ANY DIRECT TEXT TITLE FALLBACK */
+
+.conversion-next-service-layout > a {
+  color:
+    var(--uv-white);
+
+  font-family:
+    var(--font-sora),
+    sans-serif;
+}
+
+
+/* ARROW */
+
+.conversion-next-service-layout > a::after,
+.sales-next-service a::after,
+.service-detail-navigation-grid > a::after {
+  position: absolute;
+
+  right: 30px;
+  bottom: 27px;
+
+  content: "↗";
+
+  color:
+    var(--uv-orange);
+
+  font-size: 24px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  transition:
+    transform 180ms ease;
+}
+
+.conversion-next-service-layout > a:hover::after,
+.sales-next-service a:hover::after,
+.service-detail-navigation-grid > a:hover::after {
+  transform:
+    translate(
+      3px,
+      -3px
+    );
+}
+
+
+/* SUBTLE GRADIENT */
+
+.conversion-next-service-layout > a::before,
+.sales-next-service a::before,
+.service-detail-navigation-grid > a::before {
+  position: absolute;
+
+  top: -70px;
+  right: -70px;
+
+  width: 220px;
+  height: 220px;
+
+  content: "";
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      62,
+      141,
+      255,
+      0.07
+    );
+
+  filter:
+    blur(70px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FORCE OLD HUGE LAYOUTS TO COMPACT
+========================================================= */
+
+.conversion-next-service {
+  min-height: 0 !important;
+}
+
+.conversion-next-service-layout {
+  min-height: 0 !important;
+}
+
+.sales-next-service {
+  min-height: 0 !important;
+}
+
+.service-detail-navigation {
+  min-height: 0 !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .conversion-next-service-layout,
+  .service-detail-navigation-grid {
+    grid-template-columns:
+      190px
+      minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+  .conversion-next-service-layout > a,
+  .sales-next-service a,
+  .service-detail-navigation-grid > a {
+    min-height: 160px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 699px) {
+  .conversion-next-service,
+  .sales-next-service,
+  .service-detail-navigation {
+    padding:
+      52px
+      0;
+  }
+
+  .conversion-next-service-layout,
+  .service-detail-navigation-grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  .conversion-next-service-layout > a,
+  .sales-next-service a,
+  .service-detail-navigation-grid > a {
+    min-height: 145px;
+
+    padding:
+      24px
+      21px;
+
+    border-radius: 13px;
+  }
+
+  .conversion-next-service-layout > a h2,
+  .conversion-next-service-layout > a h3,
+  .sales-next-service a h2,
+  .sales-next-service a h3,
+  .service-detail-navigation-grid > a h2,
+  .service-detail-navigation-grid > a h3 {
+    max-width: 85%;
+
+    font-size:
+      clamp(
+        26px,
+        7.6vw,
+        34px
+      );
+  }
+
+  .conversion-next-service-layout > a::after,
+  .sales-next-service a::after,
+  .service-detail-navigation-grid > a::after {
+    right: 20px;
+    bottom: 21px;
+
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   UNIVIBE — CONVERSION CTA SYSTEM
+========================================================= */
+
+/*
+ * PRIMARY CTA
+ * Per azioni commerciali vere:
+ * consulenza, analisi, progetto, contatto.
+ */
+
+.uv-button-primary,
+.hero-premium-primary,
+.conversion-primary-button,
+.sales-service-actions a:first-child,
+.service-detail-hero-actions a:first-child,
+.service-detail-contact-actions a:first-child,
+.conversion-final-actions a:first-child,
+.sales-final-actions a:first-child,
+.transformation-new-bottom > a,
+.impact-new-conversion > a {
+  position: relative;
+
+  min-height: 48px;
+
+  padding:
+    0
+    20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  overflow: hidden;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      110deg,
+      #d42e5a 0%,
+      #e94f3d 47%,
+      #f28b1f 100%
+    );
+
+  box-shadow:
+    0 12px 32px rgba(212,46,90,.13);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: .01em;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.uv-button-primary::after,
+.hero-premium-primary::after,
+.conversion-primary-button::after,
+.sales-service-actions a:first-child::after,
+.service-detail-hero-actions a:first-child::after,
+.service-detail-contact-actions a:first-child::after,
+.conversion-final-actions a:first-child::after,
+.sales-final-actions a:first-child::after,
+.transformation-new-bottom > a::after,
+.impact-new-conversion > a::after {
+  content: "↗";
+
+  font-size: 14px;
+  font-weight: 400;
+
+  transition:
+    transform 180ms ease;
+}
+
+.uv-button-primary:hover,
+.hero-premium-primary:hover,
+.conversion-primary-button:hover,
+.sales-service-actions a:first-child:hover,
+.service-detail-hero-actions a:first-child:hover,
+.service-detail-contact-actions a:first-child:hover,
+.conversion-final-actions a:first-child:hover,
+.sales-final-actions a:first-child:hover,
+.transformation-new-bottom > a:hover,
+.impact-new-conversion > a:hover {
+  transform:
+    translateY(-2px);
+
+  filter:
+    brightness(1.04);
+
+  box-shadow:
+    0 18px 42px rgba(212,46,90,.19);
+}
+
+.uv-button-primary:hover::after,
+.hero-premium-primary:hover::after,
+.conversion-primary-button:hover::after,
+.sales-service-actions a:first-child:hover::after,
+.service-detail-hero-actions a:first-child:hover::after,
+.service-detail-contact-actions a:first-child:hover::after,
+.conversion-final-actions a:first-child:hover::after,
+.sales-final-actions a:first-child:hover::after,
+.transformation-new-bottom > a:hover::after,
+.impact-new-conversion > a:hover::after {
+  transform:
+    translate(2px,-2px);
+}
+
+
+/* =========================================================
+   SECONDARY CTA
+========================================================= */
+
+.uv-button-secondary,
+.hero-premium-secondary,
+.conversion-secondary-button,
+.sales-service-actions a:nth-child(2),
+.service-detail-hero-actions a:nth-child(2),
+.service-detail-contact-actions a:nth-child(2),
+.conversion-final-actions a:nth-child(2),
+.sales-final-actions a:nth-child(2) {
+  position: relative;
+
+  min-height: 48px;
+
+  padding:
+    0
+    19px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.14);
+
+  border-radius: 10px;
+
+  color:
+    rgba(255,255,255,.88);
+
+  background:
+    rgba(255,255,255,.025);
+
+  font-size: 11px;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.uv-button-secondary::after,
+.hero-premium-secondary::after,
+.conversion-secondary-button::after,
+.sales-service-actions a:nth-child(2)::after,
+.service-detail-hero-actions a:nth-child(2)::after,
+.service-detail-contact-actions a:nth-child(2)::after,
+.conversion-final-actions a:nth-child(2)::after,
+.sales-final-actions a:nth-child(2)::after {
+  content: "↓";
+
+  color:
+    var(--uv-cyan);
+
+  font-size: 12px;
+}
+
+.uv-button-secondary:hover,
+.hero-premium-secondary:hover,
+.conversion-secondary-button:hover,
+.sales-service-actions a:nth-child(2):hover,
+.service-detail-hero-actions a:nth-child(2):hover,
+.service-detail-contact-actions a:nth-child(2):hover,
+.conversion-final-actions a:nth-child(2):hover,
+.sales-final-actions a:nth-child(2):hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(108,203,255,.28);
+
+  color: #fff;
+
+  background:
+    rgba(62,141,255,.055);
+}
+
+
+/* =========================================================
+   EDITORIAL TEXT CTA
+========================================================= */
+
+.uv-text-link,
+.method-new-ending > a,
+.ecosystem-new-system > a,
+.conversion-text-link {
+  width: fit-content;
+
+  padding-bottom: 7px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  border-bottom:
+    1px solid
+    rgba(242,139,31,.75);
+
+  color:
+    var(--uv-white);
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    gap 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.uv-text-link::after,
+.method-new-ending > a::after,
+.ecosystem-new-system > a::after,
+.conversion-text-link::after {
+  content: "↗";
+
+  color:
+    var(--uv-orange);
+}
+
+.uv-text-link:hover,
+.method-new-ending > a:hover,
+.ecosystem-new-system > a:hover,
+.conversion-text-link:hover {
+  gap: 13px;
+
+  color:
+    var(--uv-cyan);
+
+  border-color:
+    var(--uv-cyan);
+}
+
+
+/* =========================================================
+   FINAL CTA — HIGH CONVERSION AREA
+========================================================= */
+
+.conversion-final,
+.sales-final,
+.service-detail-contact,
+.service-detail-closing {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.conversion-final-box,
+.sales-final-container,
+.service-detail-contact-grid,
+.service-detail-closing-container {
+  position: relative;
+}
+
+.conversion-final-actions,
+.sales-final-actions,
+.service-detail-contact-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   CTA TRUST MICROCOPY
+========================================================= */
+
+.uv-cta-note {
+  margin-top: 13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    rgba(255,255,255,.42);
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.uv-cta-note::before {
+  width: 5px;
+  height: 5px;
+
+  content: "";
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  background:
+    #38d996;
+
+  box-shadow:
+    0 0 10px
+    rgba(56,217,150,.5);
+}
+
+
+/* =========================================================
+   MOBILE CTA
+========================================================= */
+
+@media (max-width: 699px) {
+
+  .hero-premium-actions,
+  .conversion-final-actions,
+  .sales-final-actions,
+  .service-detail-contact-actions,
+  .sales-service-actions,
+  .service-detail-hero-actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .uv-button-primary,
+  .uv-button-secondary,
+  .hero-premium-primary,
+  .hero-premium-secondary,
+  .conversion-primary-button,
+  .conversion-secondary-button,
+  .sales-service-actions a,
+  .service-detail-hero-actions a,
+  .service-detail-contact-actions a,
+  .conversion-final-actions a,
+  .sales-final-actions a {
+    width: 100%;
+
+    min-height: 48px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.uv-button-primary:focus-visible,
+.uv-button-secondary:focus-visible,
+.hero-premium-primary:focus-visible,
+.hero-premium-secondary:focus-visible,
+.conversion-primary-button:focus-visible,
+.conversion-secondary-button:focus-visible,
+.transformation-new-bottom > a:focus-visible,
+.impact-new-conversion > a:focus-visible,
+.method-new-ending > a:focus-visible,
+.ecosystem-new-system > a:focus-visible {
+  outline:
+    2px solid
+    var(--uv-cyan);
+
+  outline-offset: 4px;
+}

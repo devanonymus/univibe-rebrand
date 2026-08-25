@@ -79,9 +79,19 @@ export default function Navbar() {
           onClick={closeAll}
           aria-label="Univibe Group"
         >
-          <span>
-            UNI<strong>VIBE</strong>
+          <span
+            className="uv-brand-word"
+            aria-hidden="true"
+          >
+            <i className="uv-brand-u">U</i>
+            <i className="uv-brand-n">N</i>
+            <i className="uv-brand-i">I</i>
+            <i className="uv-brand-v">V</i>
+            <i className="uv-brand-i2">I</i>
+            <i className="uv-brand-b">B</i>
+            <i className="uv-brand-e">E</i>
           </span>
+
           <small>GROUP</small>
         </Link>
 

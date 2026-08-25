@@ -47,3 +47,10 @@ src/components/home/*-before-*.tsx
 
 # Local backup files
 src/components/layout/*-before-*.tsx
+
+# Local CSS backups
+src/app/*-before-*.css
+src/styles/*-before-*.css
+
+# Local backups
+/backups/

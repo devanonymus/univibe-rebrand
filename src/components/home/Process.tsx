@@ -3,144 +3,106 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 
-const principles = [
+const phases = [
   {
-    title: "Comprendere prima di proporre",
-    description:
-      "Analizziamo il contesto, i processi, le persone coinvolte e il problema reale. Una soluzione corretta non può nascere da una richiesta interpretata superficialmente.",
+    name: "Capire",
+    text:
+      "Contesto, processi, persone, obiettivi e criticità prima di qualsiasi proposta.",
   },
   {
-    title: "Progettare il sistema completo",
-    description:
-      "Definiamo come devono lavorare insieme dati, software, infrastrutture, automazioni e responsabilità. Evitiamo interventi isolati che spostano semplicemente il problema.",
+    name: "Disegnare",
+    text:
+      "Definiamo architettura, priorità e relazioni tra tecnologia e organizzazione.",
   },
   {
-    title: "Realizzare per fasi verificabili",
-    description:
-      "Quando il progetto lo consente, procediamo attraverso rilasci progressivi. L’azienda può utilizzare, valutare e migliorare il sistema senza attendere mesi prima di vedere un risultato.",
+    name: "Costruire",
+    text:
+      "Realizziamo per fasi verificabili, riducendo rischio e complessità.",
   },
   {
-    title: "Misurare ciò che cambia",
-    description:
-      "Il progetto non termina con la consegna. Verifichiamo utilizzo, criticità, prestazioni e impatto operativo per capire cosa mantenere, correggere o potenziare.",
+    name: "Evolvere",
+    text:
+      "Misuriamo utilizzo e risultati per decidere cosa migliorare e potenziare.",
   },
 ];
 
 export default function Process() {
   return (
-    <section className="method-editorial" id="metodo">
-      <div className="method-editorial-background" aria-hidden="true">
-        <div className="method-editorial-glow" />
-        <span>METHOD</span>
-      </div>
-
-      <div className="section-container method-editorial-container">
-        <div className="method-editorial-opening">
+    <section className="method-new" id="metodo">
+      <div className="section-container method-new-container">
+        <div className="method-new-opening">
           <motion.div
-            className="method-editorial-heading"
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7 }}
           >
-            <p>Il nostro metodo</p>
+            <span className="uv-eyebrow">Il nostro metodo</span>
 
             <h2>
-              Non partiamo dalla tecnologia.
-              <strong> Partiamo da ciò che deve cambiare.</strong>
+              Prima comprendiamo.
+              <strong>Poi decidiamo cosa costruire.</strong>
             </h2>
           </motion.div>
 
-          <motion.div
-            className="method-editorial-intro"
-            initial={{ opacity: 0, y: 25 }}
+          <motion.p
+            initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.75, delay: 0.08 }}
+            transition={{ duration: 0.7, delay: 0.08 }}
           >
-            <p>
-              Molti progetti digitali iniziano nel modo sbagliato: con una
-              lista di funzionalità, una piattaforma già scelta o un
-              preventivo costruito prima di comprendere il problema.
-            </p>
-
-            <p>
-              Noi seguiamo il percorso opposto. Prima individuiamo ciò che
-              rallenta, disperde risorse o limita la crescita. Solo dopo
-              definiamo quale sistema può produrre il cambiamento necessario.
-            </p>
-          </motion.div>
+            Un progetto digitale efficace non nasce da una lista di
+            funzionalità. Nasce da una comprensione precisa di ciò che
+            deve cambiare nell&apos;azienda.
+          </motion.p>
         </div>
 
         <motion.div
-          className="method-editorial-question"
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
+          className="method-new-question"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.8 }}
         >
-          <p>
-            La domanda non è:
-            <span>“Quale software vuoi realizzare?”</span>
-          </p>
+          <span>Non chiediamo</span>
+          <p>“Quale software vuoi?”</p>
 
-          <p>
-            La domanda corretta è:
-            <strong>
-              “Quale problema deve smettere di esistere dopo il progetto?”
-            </strong>
-          </p>
+          <span>Chiediamo</span>
+          <strong>
+            “Quale problema non deve più esistere?”
+          </strong>
         </motion.div>
 
-        <div className="method-editorial-principles">
-          {principles.map((principle, index) => (
+        <div className="method-new-flow">
+          {phases.map((phase, index) => (
             <motion.article
-              key={principle.title}
-              initial={{ opacity: 0, y: 35 }}
+              key={phase.name}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.28 }}
+              viewport={{ once: true, amount: 0.35 }}
               transition={{
-                duration: 0.7,
-                delay: index * 0.05,
+                duration: 0.6,
+                delay: index * 0.07,
               }}
             >
-              <h3>{principle.title}</h3>
-              <p>{principle.description}</p>
+              <div className="method-new-marker" />
+              <h3>{phase.name}</h3>
+              <p>{phase.text}</p>
             </motion.article>
           ))}
         </div>
 
-        <div className="method-editorial-result">
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.75 }}
-          >
-            <p>Il risultato</p>
+        <div className="method-new-ending">
+          <p>
+            Il risultato è un progetto
+            <strong>
+              comprensibile, governabile e realmente utilizzabile.
+            </strong>
+          </p>
 
-            <h3>
-              Un progetto comprensibile, governabile e costruito per essere
-              utilizzato realmente.
-            </h3>
-          </motion.div>
-
-          <motion.div
-            className="method-editorial-result-copy"
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.75, delay: 0.08 }}
-          >
-            <p>
-              L’azienda conosce la direzione, comprende le priorità e può
-              valutare progressivamente il valore prodotto.
-            </p>
-
-            <Link href="#contatti">
-              Raccontaci il problema da risolvere
-            </Link>
-          </motion.div>
+          <Link href="#contatti">
+            Raccontaci il problema
+          </Link>
         </div>
       </div>
     </section>

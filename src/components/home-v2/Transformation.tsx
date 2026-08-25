@@ -3,210 +3,114 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 
-const stages = [
+const systems = [
   {
-    title: "Comprendiamo",
-    word: "Analyze",
-    description:
-      "Studiamo il modo in cui l’azienda lavora, vende, comunica e gestisce le informazioni. Prima di proporre qualsiasi tecnologia individuiamo inefficienze, rischi e opportunità reali.",
-    capabilities: [
-      "Consulenza IT",
-      "Analisi dei processi",
-      "Business strategy",
-      "Assessment digitale",
-    ],
-    href: "/servizi/it-consulting",
+    title: "Comprendiamo il problema",
+    text:
+      "Analizziamo come l’azienda lavora oggi: processi, strumenti, dati, comunicazione e punti di attrito. Prima di proporre tecnologia definiamo dove si perde tempo, controllo o opportunità.",
+    meta: "Analisi · Processi · Strategia",
   },
   {
-    title: "Progettiamo",
-    word: "Design",
-    description:
-      "Definiamo l’architettura del sistema, i flussi informativi, le responsabilità e le integrazioni necessarie. Ogni scelta viene collegata a un risultato operativo preciso.",
-    capabilities: [
-      "Software architecture",
-      "Artificial Intelligence",
-      "Network design",
-      "Data governance",
-    ],
-    href: "/servizi/software-engineering",
+    title: "Progettiamo il sistema",
+    text:
+      "Disegniamo flussi, responsabilità, integrazioni e architettura tecnologica. Ogni componente nasce per risolvere un problema operativo preciso, non per aggiungere complessità.",
+    meta: "Architecture · AI · Data · Infrastructure",
   },
   {
-    title: "Realizziamo",
-    word: "Build",
-    description:
-      "Sviluppiamo applicazioni, piattaforme, gestionali, dashboard e automazioni progettate intorno alle attività reali dell’organizzazione.",
-    capabilities: [
-      "Web application",
-      "Piattaforme SaaS",
-      "Gestionali",
-      "Dashboard",
-    ],
-    href: "/servizi/software-engineering",
+    title: "Costruiamo e integriamo",
+    text:
+      "Software, automazioni, piattaforme e infrastrutture vengono sviluppati come parti dello stesso sistema, collegando ciò che oggi lavora in modo separato.",
+    meta: "Software · Automation · Network",
   },
   {
-    title: "Connettiamo",
-    word: "Connect",
-    description:
-      "Colleghiamo software, dati, strumenti commerciali e infrastrutture per eliminare duplicazioni, passaggi manuali e informazioni isolate.",
-    capabilities: [
-      "API",
-      "CRM ed ERP",
-      "E-commerce",
-      "Workflow automation",
-    ],
-    href: "/servizi/artificial-intelligence",
-  },
-  {
-    title: "Proteggiamo",
-    word: "Protect",
-    description:
-      "Progettiamo sicurezza, continuità operativa e protezione dei dati come elementi strutturali del sistema, non come interventi aggiunti alla fine.",
-    capabilities: [
-      "Privacy e GDPR",
-      "Network security",
-      "Backup",
-      "Business continuity",
-    ],
-    href: "/servizi/privacy-gdpr",
-  },
-  {
-    title: "Evolviamo",
-    word: "Evolve",
-    description:
-      "Misuriamo ciò che accade, individuiamo nuove possibilità e miglioriamo progressivamente processi, piattaforme e strategie commerciali.",
-    capabilities: [
-      "SEO e visibilità",
-      "Analytics",
-      "Ottimizzazione",
-      "Supporto evolutivo",
-    ],
-    href: "/servizi/growth-strategy",
+    title: "Misuriamo e facciamo evolvere",
+    text:
+      "Una volta operativo, il sistema continua a migliorare. Analizziamo risultati, comportamenti e nuove opportunità per aumentare efficienza, controllo e capacità di crescita.",
+    meta: "Analytics · Growth · Optimization",
   },
 ];
 
 export default function Transformation() {
   return (
-    <section className="transformation-v2" id="servizi">
-      <div className="transformation-v2-background" aria-hidden="true">
-        <div className="transformation-v2-glow transformation-v2-glow-red" />
-        <div className="transformation-v2-glow transformation-v2-glow-blue" />
-        <span>DIGITAL TRANSFORMATION</span>
-      </div>
-
-      <div className="section-container transformation-v2-container">
-        <div className="transformation-v2-opening">
+    <section className="transformation-new" id="servizi">
+      <div className="section-container transformation-new-container">
+        <div className="transformation-new-top">
           <motion.div
-            className="transformation-v2-heading"
-            initial={{ opacity: 0, y: 34 }}
+            className="transformation-new-heading"
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.75 }}
           >
-            <p>Un unico partner. Un sistema completo.</p>
+            <span className="transformation-new-kicker">
+              Digital transformation
+            </span>
 
             <h2>
-              La trasformazione digitale
-              <strong> non inizia dal software.</strong>
+              La tecnologia da sola
+              <strong>non trasforma un’azienda.</strong>
             </h2>
           </motion.div>
 
           <motion.div
-            className="transformation-v2-intro"
-            initial={{ opacity: 0, y: 26 }}
+            className="transformation-new-intro"
+            initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.75, delay: 0.08 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.08 }}
           >
             <p>
-              Molte aziende acquistano strumenti, piattaforme e consulenze,
-              ma continuano a lavorare nello stesso modo.
+              Il valore nasce quando strategia, processi e tecnologia vengono
+              progettati insieme.
             </p>
 
             <p>
-              Noi partiamo dal cambiamento che deve avvenire e costruiamo
-              intorno a esso tecnologia, processi e competenze.
+              Per questo non partiamo dal servizio da vendere. Partiamo dal
+              problema da risolvere.
             </p>
           </motion.div>
         </div>
 
-        <motion.div
-          className="transformation-v2-declaration"
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p>
-            Non vendiamo servizi scollegati.
-            <strong>
-              Seguiamo l’impresa dalla comprensione del problema
-              all’evoluzione del sistema.
-            </strong>
-          </p>
-        </motion.div>
-
-        <div className="transformation-v2-stages">
-          {stages.map((stage, index) => (
+        <div className="transformation-new-grid">
+          {systems.map((system, index) => (
             <motion.article
-              className="transformation-v2-stage"
-              key={stage.title}
-              initial={{ opacity: 0, y: 38 }}
+              className="transformation-new-card"
+              key={system.title}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.22 }}
+              viewport={{ once: true, amount: 0.25 }}
               transition={{
-                duration: 0.75,
-                delay: index * 0.04,
+                duration: 0.65,
+                delay: index * 0.05,
               }}
             >
-              <span className="transformation-v2-ghost">
-                {stage.word}
-              </span>
+              <div className="transformation-new-card-line" />
 
-              <div className="transformation-v2-stage-main">
-                <p className="transformation-v2-stage-label">
-                  {stage.word}
-                </p>
+              <h3>{system.title}</h3>
 
-                <h3>{stage.title}.</h3>
-              </div>
+              <p>{system.text}</p>
 
-              <div className="transformation-v2-stage-copy">
-                <p>{stage.description}</p>
-
-                <div className="transformation-v2-capabilities">
-                  {stage.capabilities.map((capability) => (
-                    <span key={capability}>{capability}</span>
-                  ))}
-                </div>
-              </div>
-
-              <Link href={stage.href}>
-                Approfondisci
-              </Link>
+              <span>{system.meta}</span>
             </motion.article>
           ))}
         </div>
 
-        <motion.div
-          className="transformation-v2-closing"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.75 }}
-        >
+        <div className="transformation-new-bottom">
           <div>
-            <p>Non sai da quale servizio iniziare?</p>
+            <span>Il risultato</span>
 
-            <span>
-              È normale. Il primo passo non è scegliere una soluzione,
-              ma comprendere quale problema sta limitando l’azienda.
-            </span>
+            <p>
+              Meno strumenti scollegati.
+              <strong>
+                Più controllo, efficienza e capacità di crescere.
+              </strong>
+            </p>
           </div>
 
           <Link href="#contatti">
-            Richiedi un confronto
+            Raccontaci il tuo progetto
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

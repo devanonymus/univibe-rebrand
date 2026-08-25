@@ -3,106 +3,98 @@
 import { motion } from "motion/react";
 
 const capabilities = [
-  "Software Engineering",
+  "Software",
   "Artificial Intelligence",
-  "Business Strategy",
-  "Data & Intelligence",
-  "IT Infrastructure",
-  "Digital Growth",
+  "Strategy",
+  "Data",
+  "Infrastructure",
+  "Growth",
 ];
 
 export default function Manifesto() {
   return (
-    <section className="manifesto-premium" id="azienda">
-      <div className="manifesto-premium-background" aria-hidden="true">
-        <div className="manifesto-premium-glow" />
-        <span className="manifesto-premium-word">SYSTEMS</span>
+    <section className="manifesto-editorial" id="azienda">
+      <div className="manifesto-editorial-background" aria-hidden="true">
+        <span>UNIVIBE</span>
       </div>
 
-      <div className="section-container manifesto-premium-container">
-        <div className="manifesto-premium-heading">
-          <motion.div
-            className="manifesto-premium-intro"
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.7 }}
-          >
-            <span />
-            Non una semplice agenzia digitale
-          </motion.div>
+      <div className="section-container manifesto-editorial-container">
+        <motion.div
+          className="manifesto-editorial-label"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span />
+          Il nostro modo di lavorare
+        </motion.div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 38 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 0.85,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            Una visione unica.
-            <strong>
-              Tecnologia, strategia e competenze che lavorano insieme.
-            </strong>
-          </motion.h2>
-        </div>
-
-        <div className="manifesto-premium-body">
+        <div className="manifesto-editorial-grid">
           <motion.div
-            className="manifesto-premium-copy"
+            className="manifesto-editorial-heading"
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.75 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
-            <p className="manifesto-premium-lead">
-              Le aziende non hanno bisogno di più strumenti scollegati.
-              Hanno bisogno di un sistema capace di unire processi,
-              persone, dati e tecnologia.
-            </p>
-
-            <p>
-              Univibe Group progetta ecosistemi digitali completi, costruiti
-              intorno agli obiettivi reali dell&apos;impresa. Dalla strategia
-              allo sviluppo, dall&apos;infrastruttura alla crescita, ogni
-              componente viene progettato per generare valore misurabile e
-              duraturo.
-            </p>
+            <h2>
+              Non siamo una semplice agenzia digitale.
+              <strong>
+                Costruiamo il sistema che fa funzionare l&apos;azienda.
+              </strong>
+            </h2>
           </motion.div>
 
           <motion.div
-            className="manifesto-capabilities"
-            initial={{ opacity: 0, x: 35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.85 }}
+            className="manifesto-editorial-copy"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.75, delay: 0.08 }}
           >
-            <p className="manifesto-capabilities-label">
-              Competenze integrate
+            <p className="manifesto-editorial-lead">
+              Il problema raramente è la mancanza di tecnologia.
+              Il problema è quando software, marketing, dati e infrastruttura
+              lavorano come mondi separati.
             </p>
 
-            <div className="manifesto-capabilities-flow">
-              {capabilities.map((capability, index) => (
-                <span key={capability}>
-                  {capability}
-                  {index < capabilities.length - 1 && <i />}
-                </span>
-              ))}
-            </div>
+            <p>
+              Univibe unisce queste competenze in un unico progetto.
+              Partiamo dai processi reali dell&apos;impresa, individuiamo ciò
+              che rallenta crescita ed efficienza e costruiamo un sistema
+              digitale coerente intorno agli obiettivi aziendali.
+            </p>
           </motion.div>
         </div>
 
         <motion.div
-          className="manifesto-premium-statement"
+          className="manifesto-editorial-capabilities"
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.75 }}
+        >
+          {capabilities.map((capability) => (
+            <span key={capability}>{capability}</span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="manifesto-editorial-statement"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.8 }}
         >
           <p>
-            Non sviluppiamo singoli prodotti.
-            <strong> Costruiamo sistemi che evolvono con l&apos;azienda.</strong>
+            Un solo partner.
+            <strong>
+              Una sola architettura digitale.
+            </strong>
           </p>
         </motion.div>
       </div>

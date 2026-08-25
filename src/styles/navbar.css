@@ -954,3 +954,186 @@ body.uv-menu-open {
     transition: none;
   }
 }
+
+/* =========================================================
+   NAVBAR — MOBILE POLISH
+========================================================= */
+
+@media (max-width: 699px) {
+  .uv-header {
+    padding:
+      8px
+      8px;
+  }
+
+  .uv-navbar {
+    min-height: 56px;
+
+    padding:
+      0
+      14px
+      0
+      15px;
+
+    border-radius: 14px;
+  }
+
+  .uv-brand > span {
+    font-size: 17px;
+
+    letter-spacing: 0.13em;
+  }
+
+  .uv-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .uv-menu-button span {
+    width: 20px;
+  }
+}
+
+@media (max-width: 389px) {
+  .uv-navbar {
+    min-height: 53px;
+  }
+
+  .uv-brand > span {
+    font-size: 15.5px;
+  }
+
+  .uv-menu-button {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+
+/* =========================================================
+   UNIVIBE BRAND — FINAL IDENTITY
+========================================================= */
+
+.uv-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.uv-brand-word {
+  display: inline-flex;
+  align-items: center;
+
+  font-family: var(--font-sora), sans-serif;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1;
+
+  letter-spacing: 0.11em;
+}
+
+.uv-brand-word i {
+  font-style: normal;
+  font-weight: inherit;
+}
+
+/* BRAND GRADIENT LETTERS */
+
+.uv-brand-u {
+  color: #e72d61;
+}
+
+.uv-brand-n {
+  color: #ec3e5d;
+}
+
+.uv-brand-i {
+  color: #ef5b46;
+}
+
+.uv-brand-v {
+  color: #f17a2d;
+}
+
+.uv-brand-i2 {
+  color: #e29b45;
+}
+
+.uv-brand-b {
+  color: #68b4d7;
+}
+
+.uv-brand-e {
+  color: #478fe4;
+}
+
+.uv-brand > small {
+  margin: 0;
+
+  color: #758193;
+
+  font-size: 6px;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.24em;
+}
+
+/* evita eventuali vecchi override bianchi */
+
+.uv-brand,
+.uv-brand:hover,
+.uv-brand:visited {
+  color: inherit;
+}
+
+.uv-brand-word,
+.uv-brand-word i {
+  text-decoration: none;
+}
+
+/* DESKTOP */
+
+@media (min-width: 1051px) {
+  .uv-brand-word {
+    font-size: 18px;
+  }
+}
+
+/* TABLET */
+
+@media (min-width: 700px) and (max-width: 1050px) {
+  .uv-brand-word {
+    font-size: 17px;
+  }
+
+  .uv-brand > small {
+    font-size: 5.5px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 699px) {
+  .uv-brand {
+    gap: 9px;
+  }
+
+  .uv-brand-word {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+
+  .uv-brand > small {
+    display: inline-block;
+
+    font-size: 5px;
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 360px) {
+  .uv-brand > small {
+    display: none;
+  }
+}

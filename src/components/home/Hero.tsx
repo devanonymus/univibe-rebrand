@@ -3,6 +3,13 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 
+const disciplines = [
+  "Software Engineering",
+  "Artificial Intelligence",
+  "Digital Strategy",
+  "IT Infrastructure",
+];
+
 export default function Hero() {
   return (
     <section className="hero-premium" id="home">
@@ -10,9 +17,6 @@ export default function Hero() {
         <div className="hero-premium-grid" />
         <div className="hero-premium-glow hero-premium-glow-blue" />
         <div className="hero-premium-glow hero-premium-glow-red" />
-
-        <span className="hero-premium-letter hero-premium-letter-u">U</span>
-        <span className="hero-premium-letter hero-premium-letter-b">B</span>
 
         <div className="hero-blueprint">
           <div className="blueprint-circle blueprint-circle-large" />
@@ -24,95 +28,103 @@ export default function Hero() {
 
           <div className="blueprint-line blueprint-line-one" />
           <div className="blueprint-line blueprint-line-two" />
-          <div className="blueprint-line blueprint-line-three" />
 
           <span className="blueprint-point blueprint-point-one" />
           <span className="blueprint-point blueprint-point-two" />
           <span className="blueprint-point blueprint-point-three" />
-          <span className="blueprint-point blueprint-point-four" />
           <span className="blueprint-point blueprint-point-center" />
 
           <span className="blueprint-label blueprint-label-top">
-            DIGITAL ENGINEERING
-          </span>
-
-          <span className="blueprint-label blueprint-label-side">
-            UNIVIBE SYSTEM
+            DIGITAL SYSTEMS
           </span>
         </div>
       </div>
 
       <div className="hero-premium-container">
-        <div className="hero-premium-content">
-          <motion.div
-            className="hero-premium-eyebrow"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65 }}
-          >
-            <span />
-            Digital Engineering Company
-          </motion.div>
+        <div className="hero-premium-layout">
+          <div className="hero-premium-content">
+            <motion.div
+              className="hero-premium-eyebrow"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55 }}
+            >
+              <span />
+              Digital Engineering Company
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 38 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.08,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            Costruiamo sistemi digitali
-            <strong>che trasformano le imprese.</strong>
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.85,
+                delay: 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              Progettiamo sistemi digitali
+              <strong>
+                che fanno <span>funzionare meglio</span> le aziende.
+              </strong>
+            </motion.h1>
 
-          <motion.div
-            className="hero-premium-bottom"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.24 }}
+            <motion.div
+              className="hero-premium-bottom"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <p>
+                Software, intelligenza artificiale, strategia e infrastrutture
+                progettati come un unico sistema per rendere l&apos;impresa più
+                efficiente, competitiva e pronta a crescere.
+              </p>
+
+              <div className="hero-premium-actions">
+                <Link href="#servizi" className="hero-premium-primary">
+                  Raccontaci il tuo progetto
+                </Link>
+
+                <Link href="#metodo" className="hero-premium-secondary">
+                  Scopri come lavoriamo
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.aside
+            className="hero-premium-aside"
+            initial={{ opacity: 0, x: 25 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.85, delay: 0.25 }}
           >
+            <span className="hero-premium-aside-label">
+              Il nostro approccio
+            </span>
+
             <p>
-              Software, intelligenza artificiale e infrastrutture progettate
-              per rendere le aziende più efficienti, competitive e capaci di
-              evolvere nel tempo.
+              Non aggiungiamo strumenti.
+              <strong>
+                Progettiamo architetture digitali che collegano tecnologia,
+                processi e crescita.
+              </strong>
             </p>
-
-            <div className="hero-premium-actions">
-              <Link href="#servizi" className="hero-premium-primary">
-                Scopri le soluzioni
-              </Link>
-
-              <Link href="#contatti" className="hero-premium-secondary">
-                Parliamo del tuo progetto
-              </Link>
-            </div>
-          </motion.div>
+          </motion.aside>
         </div>
 
         <motion.div
           className="hero-premium-signature"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.55 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
         >
-          <p>
-            Software Engineering
-            <span />
-            Artificial Intelligence
-            <span />
-            Digital Strategy
-            <span />
-            IT Infrastructure
-          </p>
+          <div className="hero-premium-disciplines">
+            {disciplines.map((discipline) => (
+              <span key={discipline}>{discipline}</span>
+            ))}
+          </div>
         </motion.div>
       </div>
-
-      <a href="#azienda" className="hero-premium-scroll">
-        <span>Esplora</span>
-        <i />
-      </a>
     </section>
   );
 }

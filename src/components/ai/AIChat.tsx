@@ -161,6 +161,8 @@ export default function AIChat() {
             alt=""
             width={54}
             height={54}
+            loading="eager"
+            priority
           />
           <i />
         </span>
@@ -184,7 +186,6 @@ export default function AIChat() {
                 alt="UVI, assistente digitale di Univibe"
                 width={54}
                 height={54}
-                priority={false}
               />
 
               <span className="uvi-online-status" />

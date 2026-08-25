@@ -1,276 +1,525 @@
 /* =========================================================
-   UVI — DIGITAL INTELLIGENCE
+   UVI — RESPONSIVE AI ADVISOR
+   Desktop / Tablet / Mobile
 ========================================================= */
 
 .uvi-chat {
   position: fixed;
+
   right: 22px;
   bottom: 22px;
-  z-index: 500;
-  font-family: var(--font-inter), sans-serif;
+
+  z-index: 1400;
+
+  font-family:
+    var(--font-inter),
+    sans-serif;
 }
 
-/* LAUNCHER */
+
+/* =========================================================
+   LAUNCHER
+========================================================= */
 
 .uvi-launcher {
-  min-height: 68px;
-  padding: 7px 18px 7px 7px;
+  position: relative;
+
+  min-width: 220px;
+  min-height: 64px;
+
+  padding:
+    6px
+    16px
+    6px
+    7px;
+
   display: flex;
   align-items: center;
-  gap: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 19px;
-  color: #f7f9fc;
+
+  gap: 11px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255,255,255,.13);
+
+  border-radius: 17px;
+
+  color: #f5f7fa;
+
   background:
-    linear-gradient(
-      135deg,
-      rgba(10, 24, 42, 0.97),
-      rgba(4, 11, 20, 0.97)
-    );
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(62,141,255,.07),
+      transparent 42%
+    ),
+    rgba(4,11,20,.96);
+
   box-shadow:
-    0 22px 65px rgba(0, 0, 0, 0.42),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 22px 60px rgba(0,0,0,.38),
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+  -webkit-backdrop-filter: blur(22px);
   backdrop-filter: blur(22px);
+
   cursor: pointer;
+
   transition:
+    opacity 170ms ease,
+    visibility 170ms ease,
     transform 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease;
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .uvi-launcher:hover {
-  border-color: rgba(108, 203, 255, 0.34);
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(108,203,255,.28);
+
   box-shadow:
-    0 28px 80px rgba(0, 0, 0, 0.5),
-    0 0 34px rgba(62, 141, 255, 0.08);
-  transform: translateY(-3px);
+    0 28px 75px rgba(0,0,0,.46),
+    0 0 30px rgba(62,141,255,.07);
+}
+
+/* quando la chat è aperta il launcher sparisce */
+
+.uvi-chat.is-open .uvi-launcher {
+  visibility: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform:
+    translateY(8px)
+    scale(.96);
 }
 
 .uvi-launcher-avatar {
   position: relative;
-  width: 52px;
-  height: 52px;
+
+  width: 49px;
+  height: 49px;
+
   flex: 0 0 auto;
 }
 
 .uvi-launcher-avatar img {
-  width: 52px;
-  height: 52px;
-  border-radius: 15px;
+  width: 49px;
+  height: 49px;
+
+  display: block;
+
+  border-radius: 14px;
 }
 
 .uvi-launcher-avatar i {
   position: absolute;
+
   right: -1px;
   bottom: 1px;
+
   width: 11px;
   height: 11px;
-  border: 2px solid #07101c;
+
+  border:
+    2px solid
+    #07101c;
+
   border-radius: 50%;
-  background: #5be39a;
-  box-shadow: 0 0 10px rgba(91, 227, 154, 0.75);
+
+  background:
+    #5be39a;
+
+  box-shadow:
+    0 0 10px
+    rgba(91,227,154,.68);
 }
 
 .uvi-launcher-copy {
+  min-width: 0;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: flex-start;
 }
 
 .uvi-launcher-copy strong {
-  font-family: var(--font-sora), sans-serif;
+  font-family:
+    var(--font-sora),
+    sans-serif;
+
   font-size: 13px;
-  font-weight: 540;
+
+  font-weight: 550;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
 }
 
 .uvi-launcher-copy small {
   margin-top: 4px;
-  font-size: 10px;
-  color: #8492a5;
+
+  color: #8491a2;
+
+  font-size: 9px;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
 }
 
-/* PANEL */
+
+/* =========================================================
+   PANEL
+========================================================= */
 
 .uvi-panel {
   position: absolute;
+
   right: 0;
-  bottom: 82px;
-  width: min(420px, calc(100vw - 32px));
-  height: min(690px, calc(100svh - 116px));
+  bottom: 0;
+
+  width: 390px;
+
+  height:
+    min(
+      620px,
+      calc(100svh - 42px)
+    );
+
+  min-height: 480px;
+
   overflow: hidden;
+
   visibility: hidden;
+
   opacity: 0;
+
+  pointer-events: none;
+
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 24px;
+
+  grid-template-rows:
+    auto
+    auto
+    minmax(0,1fr)
+    auto;
+
+  border:
+    1px solid
+    rgba(255,255,255,.13);
+
+  border-radius: 21px;
+
   background:
     radial-gradient(
-      circle at 90% 0%,
-      rgba(62, 141, 255, 0.13),
-      transparent 31%
+      circle at 90% 0,
+      rgba(62,141,255,.1),
+      transparent 30%
     ),
-    rgba(3, 10, 19, 0.985);
+    rgba(3,10,19,.985);
+
   box-shadow:
-    0 36px 110px rgba(0, 0, 0, 0.58),
-    inset 0 1px 0 rgba(255, 255, 255, 0.045);
-  backdrop-filter: blur(28px);
-  pointer-events: none;
-  transform: translateY(16px) scale(0.975);
-  transform-origin: right bottom;
+    0 34px 100px rgba(0,0,0,.56),
+    inset 0 1px 0 rgba(255,255,255,.045);
+
+  -webkit-backdrop-filter:
+    blur(28px);
+
+  backdrop-filter:
+    blur(28px);
+
+  transform:
+    translateY(14px)
+    scale(.975);
+
+  transform-origin:
+    right bottom;
+
   transition:
-    opacity 190ms ease,
-    transform 240ms ease,
-    visibility 240ms ease;
+    opacity 180ms ease,
+    transform 220ms
+      cubic-bezier(.22,1,.36,1),
+    visibility 220ms ease;
 }
 
 .uvi-chat.is-open .uvi-panel {
   visibility: visible;
+
   opacity: 1;
+
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+
+  transform:
+    translateY(0)
+    scale(1);
 }
 
-/* HEADER */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .uvi-header {
-  min-height: 91px;
-  padding: 16px 18px;
+  min-height: 82px;
+
+  padding:
+    13px
+    15px;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.085);
+
+  justify-content:
+    space-between;
+
+  gap: 14px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.075);
 }
 
 .uvi-identity {
+  min-width: 0;
+
   display: flex;
   align-items: center;
-  gap: 12px;
+
+  gap: 11px;
 }
 
 .uvi-avatar {
   position: relative;
-  width: 54px;
-  height: 54px;
+
+  width: 50px;
+  height: 50px;
+
   flex: 0 0 auto;
 }
 
 .uvi-avatar img {
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+
+  display: block;
+
+  border-radius: 14px;
 }
 
 .uvi-online-status {
   position: absolute;
-  right: 0;
-  bottom: 1px;
+
+  right: -1px;
+  bottom: 0;
+
   width: 11px;
   height: 11px;
-  border: 2px solid #07101c;
+
+  border:
+    2px solid
+    #07101c;
+
   border-radius: 50%;
-  background: #5be39a;
-  box-shadow: 0 0 10px rgba(91, 227, 154, 0.8);
+
+  background:
+    #5be39a;
+
+  box-shadow:
+    0 0 10px
+    rgba(91,227,154,.7);
 }
 
 .uvi-name-row {
   display: flex;
   align-items: center;
+
   gap: 7px;
 }
 
 .uvi-name-row strong {
-  font-family: var(--font-sora), sans-serif;
+  font-family:
+    var(--font-sora),
+    sans-serif;
+
   font-size: 14px;
+
   font-weight: 550;
 }
 
 .uvi-name-row > span {
-  padding: 3px 5px;
-  border: 1px solid rgba(108, 203, 255, 0.2);
+  padding:
+    3px
+    5px;
+
+  border:
+    1px solid
+    rgba(108,203,255,.2);
+
   border-radius: 5px;
+
   color: #75c9f5;
-  background: rgba(62, 141, 255, 0.08);
+
+  background:
+    rgba(62,141,255,.07);
+
   font-size: 7px;
   font-weight: 750;
-  letter-spacing: 0.08em;
+
+  letter-spacing: .08em;
 }
 
 .uvi-identity p {
-  margin: 3px 0 0;
-  font-size: 10px;
+  margin:
+    3px
+    0
+    0;
+
   color: #8996a8;
+
+  font-size: 10px;
 }
 
 .uvi-identity small {
-  margin-top: 5px;
+  margin-top: 4px;
+
   display: flex;
+
   align-items: center;
+
   gap: 5px;
-  font-size: 9px;
+
   color: #68cf94;
+
+  font-size: 8.5px;
 }
 
 .uvi-identity small i {
   width: 5px;
   height: 5px;
+
   border-radius: 50%;
+
   background: #5be39a;
 }
 
+
+/* CLOSE */
+
 .uvi-close {
   position: relative;
-  width: 38px;
-  height: 38px;
+
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 auto;
+
   border: 0;
-  border-radius: 10px;
+
+  border-radius: 9px;
+
   background: transparent;
+
   cursor: pointer;
-  transition: background 180ms ease;
+
+  transition:
+    background 180ms ease;
 }
 
 .uvi-close:hover {
-  background: rgba(255, 255, 255, 0.055);
+  background:
+    rgba(255,255,255,.05);
 }
 
 .uvi-close span {
   position: absolute;
+
   top: 50%;
   left: 50%;
+
   width: 16px;
   height: 1px;
+
   background: #8f9bac;
 }
 
 .uvi-close span:first-child {
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform:
+    translate(-50%,-50%)
+    rotate(45deg);
 }
 
 .uvi-close span:last-child {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform:
+    translate(-50%,-50%)
+    rotate(-45deg);
 }
 
-/* MODALITÀ */
+
+/* =========================================================
+   MODES
+========================================================= */
 
 .uvi-modes {
-  padding: 10px 12px;
+  padding:
+    8px
+    10px;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
-  background: rgba(255, 255, 255, 0.012);
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap: 5px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.07);
+
+  background:
+    rgba(255,255,255,.01);
 }
 
 .uvi-modes button {
+  min-width: 0;
   min-height: 37px;
-  padding: 0 9px;
-  border: 1px solid transparent;
-  border-radius: 10px;
+
+  padding:
+    0
+    8px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius: 9px;
+
   color: #7f8c9e;
+
   background: transparent;
-  font-size: 10px;
+
+  font-size: 9.5px;
+
   font-weight: 570;
+
+  line-height: 1;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
   cursor: pointer;
+
   transition:
     color 180ms ease,
     border-color 180ms ease,
@@ -279,84 +528,138 @@
 
 .uvi-modes button:hover {
   color: #dce4ed;
-  background: rgba(255, 255, 255, 0.03);
+
+  background:
+    rgba(255,255,255,.025);
 }
 
 .uvi-modes button.is-active {
-  border-color: rgba(108, 203, 255, 0.19);
-  color: #ffffff;
+  border-color:
+    rgba(108,203,255,.2);
+
+  color: #fff;
+
   background:
     linear-gradient(
       135deg,
-      rgba(212, 46, 90, 0.1),
-      rgba(62, 141, 255, 0.09)
+      rgba(212,46,90,.085),
+      rgba(62,141,255,.08)
     );
 }
 
-/* CONVERSAZIONE */
+
+/* =========================================================
+   CONVERSATION
+========================================================= */
 
 .uvi-conversation {
   min-height: 0;
-  padding: 20px 17px 25px;
+
+  padding:
+    16px
+    14px
+    20px;
+
   overflow-x: hidden;
   overflow-y: auto;
+
+  overscroll-behavior:
+    contain;
+
   scrollbar-width: thin;
+
   scrollbar-color:
-    rgba(108, 203, 255, 0.18)
+    rgba(108,203,255,.17)
     transparent;
 }
 
 .uvi-conversation::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 
 .uvi-conversation::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: rgba(108, 203, 255, 0.18);
+
+  background:
+    rgba(108,203,255,.17);
 }
 
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
 .uvi-message {
-  margin-bottom: 15px;
+  margin-bottom: 13px;
+
   display: flex;
+
   align-items: flex-end;
-  gap: 8px;
+
+  gap: 7px;
 }
 
 .uvi-message > img {
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
+
   flex: 0 0 auto;
-  border-radius: 9px;
+
+  border-radius: 8px;
 }
 
 .uvi-message > div {
-  max-width: 85%;
+  max-width: 87%;
 }
 
 .uvi-message > div > span {
-  margin: 0 0 5px 3px;
+  margin:
+    0
+    0
+    4px
+    2px;
+
   display: block;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+
   color: #778598;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
 }
 
 .uvi-message p {
   margin: 0;
-  padding: 12px 14px;
-  border-radius: 16px;
-  font-size: 13px;
-  line-height: 1.6;
+
+  padding:
+    11px
+    13px;
+
+  border-radius: 14px;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+
   white-space: pre-wrap;
 }
 
 .uvi-message-assistant p {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom-left-radius: 5px;
-  color: #c6cfda;
-  background: rgba(255, 255, 255, 0.035);
+  border:
+    1px solid
+    rgba(255,255,255,.075);
+
+  border-bottom-left-radius:
+    5px;
+
+  color: #c7d0db;
+
+  background:
+    rgba(255,255,255,.032);
 }
 
 .uvi-message-user {
@@ -365,53 +668,87 @@
 
 .uvi-message-user > div {
   display: flex;
+
   justify-content: flex-end;
 }
 
 .uvi-message-user p {
-  border-bottom-right-radius: 5px;
-  color: #ffffff;
+  border-bottom-right-radius:
+    5px;
+
+  color: #fff;
+
   background:
     linear-gradient(
       120deg,
-      rgba(199, 43, 84, 0.92),
-      rgba(222, 83, 52, 0.92)
+      rgba(199,43,84,.92),
+      rgba(222,83,52,.92)
     );
 }
 
-/* SUGGERIMENTI */
+
+/* =========================================================
+   SUGGESTIONS
+========================================================= */
 
 .uvi-suggestions {
-  margin: 6px 0 0 38px;
+  margin:
+    4px
+    0
+    0
+    34px;
+
   display: flex;
+
   flex-direction: column;
-  gap: 7px;
+
+  gap: 6px;
 }
 
 .uvi-suggestions > span {
   margin-bottom: 2px;
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+
   color: #657386;
+
+  font-size: 8px;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
 }
 
 .uvi-suggestions button {
-  min-height: 42px;
-  padding: 9px 13px;
-  border: 1px solid rgba(108, 203, 255, 0.13);
-  border-radius: 11px;
-  color: #a9b5c5;
+  width: 100%;
+
+  min-height: 39px;
+
+  padding:
+    8px
+    11px;
+
+  border:
+    1px solid
+    rgba(108,203,255,.12);
+
+  border-radius: 10px;
+
+  color: #aab5c4;
+
   background:
     linear-gradient(
       90deg,
-      rgba(62, 141, 255, 0.035),
+      rgba(62,141,255,.03),
       transparent
     );
-  font-size: 11px;
-  line-height: 1.45;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+
   text-align: left;
+
   cursor: pointer;
+
   transition:
     border-color 180ms ease,
     color 180ms ease,
@@ -420,80 +757,168 @@
 }
 
 .uvi-suggestions button:hover {
-  border-color: rgba(108, 203, 255, 0.3);
-  color: #ffffff;
-  background: rgba(62, 141, 255, 0.07);
-  transform: translateX(3px);
+  border-color:
+    rgba(108,203,255,.27);
+
+  color: #fff;
+
+  background:
+    rgba(62,141,255,.06);
+
+  transform:
+    translateX(2px);
 }
 
-/* TYPING */
+
+/* =========================================================
+   TYPING
+========================================================= */
 
 .uvi-typing {
-  min-width: 58px;
-  padding: 12px 14px;
+  min-width: 54px;
+
+  padding:
+    11px
+    13px;
+
   display: flex;
-  gap: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  border-bottom-left-radius: 5px;
-  background: rgba(255, 255, 255, 0.035);
+
+  gap: 4px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.075);
+
+  border-radius: 14px;
+
+  border-bottom-left-radius:
+    5px;
+
+  background:
+    rgba(255,255,255,.032);
 }
 
 .uvi-typing i {
   width: 5px;
   height: 5px;
+
   border-radius: 50%;
+
   background: #8b98aa;
-  animation: uvi-typing 1.15s infinite ease-in-out;
+
+  animation:
+    uviTyping
+    1.15s
+    infinite
+    ease-in-out;
 }
 
 .uvi-typing i:nth-child(2) {
-  animation-delay: 0.12s;
+  animation-delay: .12s;
 }
 
 .uvi-typing i:nth-child(3) {
-  animation-delay: 0.24s;
+  animation-delay: .24s;
 }
 
-/* INPUT */
+@keyframes uviTyping {
+  0%,
+  60%,
+  100% {
+    opacity: .35;
+
+    transform:
+      translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+
+    transform:
+      translateY(-3px);
+  }
+}
+
+
+/* =========================================================
+   COMPOSER
+========================================================= */
 
 .uvi-composer {
-  padding: 12px 13px 11px;
-  border-top: 1px solid rgba(255, 255, 255, 0.085);
-  background: rgba(3, 10, 18, 0.93);
+  padding:
+    10px
+    11px
+    9px;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.075);
+
+  background:
+    rgba(3,10,18,.95);
 }
 
 .uvi-input-shell {
-  min-height: 54px;
-  padding: 5px 6px 5px 15px;
+  min-height: 50px;
+
+  padding:
+    4px
+    5px
+    4px
+    13px;
+
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 42px;
-  gap: 7px;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    40px;
+
+  gap: 6px;
+
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.115);
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid
+    rgba(255,255,255,.11);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255,255,255,.03);
+
   transition:
     border-color 180ms ease,
     background 180ms ease;
 }
 
 .uvi-input-shell:focus-within {
-  border-color: rgba(108, 203, 255, 0.38);
-  background: rgba(255, 255, 255, 0.045);
+  border-color:
+    rgba(108,203,255,.34);
+
+  background:
+    rgba(255,255,255,.04);
 }
 
 .uvi-input-shell textarea {
   width: 100%;
-  max-height: 100px;
-  padding: 8px 0;
+  max-height: 84px;
+
+  padding: 7px 0;
+
   resize: none;
+
   border: 0;
   outline: 0;
+
   color: #f4f7fa;
+
   background: transparent;
-  font-size: 12px;
-  line-height: 1.45;
+
+  font: inherit;
+
+  font-size: 11px;
+
+  line-height: 1.4;
 }
 
 .uvi-input-shell textarea::placeholder {
@@ -501,13 +926,19 @@
 }
 
 .uvi-input-shell button {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
+
   display: grid;
+
   place-items: center;
+
   border: 0;
-  border-radius: 11px;
-  color: #ffffff;
+
+  border-radius: 10px;
+
+  color: #fff;
+
   background:
     linear-gradient(
       135deg,
@@ -515,125 +946,650 @@
       #ed5e30 52%,
       #f28b1f
     );
+
   cursor: pointer;
+
   transition:
     opacity 180ms ease,
-    transform 180ms ease;
+    transform 180ms ease,
+    filter 180ms ease;
 }
 
 .uvi-input-shell button:hover:not(:disabled) {
-  transform: translateX(2px);
+  transform:
+    translateY(-1px);
+
+  filter:
+    brightness(1.05);
 }
 
 .uvi-input-shell button:disabled {
-  opacity: 0.28;
-  cursor: not-allowed;
+  opacity: .32;
+
+  cursor: default;
 }
 
 .uvi-input-shell button span {
-  font-size: 20px;
+  font-size: 18px;
+
   line-height: 1;
 }
 
 .uvi-composer > p {
-  margin: 8px 4px 0;
-  font-size: 8px;
-  line-height: 1.4;
+  margin:
+    7px
+    5px
+    0;
+
+  color: #5f6d80;
+
+  font-size: 7.5px;
+
+  line-height: 1.35;
+
   text-align: center;
-  color: #596679;
 }
 
-@keyframes uvi-typing {
-  0%,
-  60%,
-  100% {
-    opacity: 0.38;
-    transform: translateY(0);
-  }
 
-  30% {
-    opacity: 1;
-    transform: translateY(-4px);
-  }
-}
+/* =========================================================
+   NOTEBOOK / SMALL DESKTOP
+========================================================= */
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-  .uvi-chat {
-    right: 11px;
-    bottom: 11px;
-  }
-
-  .uvi-launcher {
-    min-height: 58px;
-    padding: 5px;
-    border-radius: 18px;
-  }
-
-  .uvi-launcher-avatar,
-  .uvi-launcher-avatar img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .uvi-launcher-copy {
-    display: none;
-  }
+@media
+  (min-width: 1051px)
+  and (max-height: 760px) {
 
   .uvi-panel {
-    position: fixed;
-    inset: 8px;
-    width: auto;
-    height: auto;
-    border-radius: 20px;
-    transform-origin: bottom center;
+    height:
+      min(
+        570px,
+        calc(100svh - 34px)
+      );
   }
 
   .uvi-header {
-    min-height: 84px;
-    padding: 13px 15px;
+    min-height: 74px;
+
+    padding:
+      10px
+      13px;
   }
 
-  .uvi-avatar,
+  .uvi-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
   .uvi-avatar img {
-    width: 49px;
-    height: 49px;
+    width: 44px;
+    height: 44px;
   }
 
   .uvi-modes {
-    padding: 8px;
+    padding:
+      6px
+      8px;
   }
 
   .uvi-modes button {
-    min-height: 38px;
-    padding: 0 5px;
+    min-height: 34px;
+  }
+
+  .uvi-conversation {
+    padding:
+      13px
+      12px
+      16px;
+  }
+
+  .uvi-message p {
+    padding:
+      9px
+      11px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media
+  (min-width: 700px)
+  and (max-width: 1050px) {
+
+  .uvi-chat {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .uvi-panel {
+    width:
+      min(
+        400px,
+        calc(100vw - 36px)
+      );
+
+    height:
+      min(
+        610px,
+        calc(100svh - 36px)
+      );
+  }
+
+  .uvi-launcher {
+    min-width: 205px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 699px) {
+
+  .uvi-chat {
+    right: 10px;
+    bottom: 10px;
+
+    left: 10px;
+  }
+
+  /* launcher compatto */
+
+  .uvi-launcher {
+    width: fit-content;
+
+    min-width: 0;
+    min-height: 56px;
+
+    margin-left: auto;
+
+    padding:
+      5px
+      13px
+      5px
+      5px;
+
+    border-radius: 16px;
+  }
+
+  .uvi-launcher-avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .uvi-launcher-avatar img {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 13px;
+  }
+
+  .uvi-launcher-copy strong {
+    font-size: 12px;
+  }
+
+  .uvi-launcher-copy small {
+    font-size: 8px;
+  }
+
+  /* panel = quasi bottom sheet */
+
+  .uvi-panel {
+    position: fixed;
+
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+
+    width: auto;
+
+    height:
+      min(
+        680px,
+        calc(100dvh - 16px)
+      );
+
+    min-height: 0;
+
+    border-radius: 20px;
+
+    transform:
+      translateY(18px)
+      scale(.985);
+
+    transform-origin:
+      center bottom;
+  }
+
+  .uvi-chat.is-open .uvi-panel {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  .uvi-header {
+    min-height: 72px;
+
+    padding:
+      10px
+      12px;
+  }
+
+  .uvi-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .uvi-avatar img {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+  }
+
+  .uvi-name-row strong {
+    font-size: 13px;
+  }
+
+  .uvi-identity p {
+    font-size: 9px;
+  }
+
+  .uvi-identity small {
+    font-size: 8px;
+  }
+
+  .uvi-close {
+    width: 34px;
+    height: 34px;
+  }
+
+  .uvi-modes {
+    padding:
+      7px
+      8px;
+
+    gap: 4px;
+  }
+
+  .uvi-modes button {
+    min-height: 35px;
+
+    padding:
+      0
+      5px;
+
     font-size: 9px;
   }
 
   .uvi-conversation {
-    padding: 17px 13px 22px;
+    padding:
+      13px
+      11px
+      16px;
+  }
+
+  .uvi-message {
+    gap: 6px;
+  }
+
+  .uvi-message > img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .uvi-message > div {
+    max-width: 89%;
   }
 
   .uvi-message p {
-    font-size: 12.5px;
+    padding:
+      10px
+      11px;
+
+    font-size: 11.5px;
+
+    line-height: 1.52;
   }
 
   .uvi-suggestions {
-    margin-left: 37px;
+    margin-left: 31px;
+  }
+
+  .uvi-suggestions button {
+    min-height: 38px;
+
+    font-size: 10px;
   }
 
   .uvi-composer {
-    padding: 10px;
+    padding:
+      9px
+      9px
+      8px;
+  }
+
+  .uvi-input-shell {
+    min-height: 48px;
+
+    grid-template-columns:
+      minmax(0,1fr)
+      38px;
+  }
+
+  .uvi-input-shell button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .uvi-input-shell textarea {
+    font-size: 11px;
   }
 }
 
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 389px) {
+
+  .uvi-chat {
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  .uvi-panel {
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+
+    height:
+      calc(100dvh - 10px);
+
+    border-radius: 17px;
+  }
+
+  .uvi-launcher-copy small {
+    display: none;
+  }
+
+  .uvi-modes button {
+    font-size: 8.5px;
+  }
+
+  .uvi-header {
+    padding-inline: 10px;
+  }
+
+  .uvi-conversation {
+    padding-inline: 9px;
+  }
+
+  .uvi-message p {
+    font-size: 11px;
+  }
+
+  .uvi-composer > p {
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE / TABLET
+========================================================= */
+
+@media
+  (max-width: 1050px)
+  and (max-height: 560px)
+  and (orientation: landscape) {
+
+  .uvi-panel {
+    height:
+      calc(100dvh - 12px);
+
+    max-height: none;
+
+    bottom: 6px;
+
+    border-radius: 16px;
+  }
+
+  .uvi-header {
+    min-height: 60px;
+
+    padding:
+      7px
+      10px;
+  }
+
+  .uvi-avatar,
+  .uvi-avatar img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .uvi-identity small {
+    display: none;
+  }
+
+  .uvi-modes {
+    padding:
+      5px
+      7px;
+  }
+
+  .uvi-modes button {
+    min-height: 30px;
+  }
+
+  .uvi-conversation {
+    padding:
+      9px
+      10px
+      11px;
+  }
+
+  .uvi-composer {
+    padding:
+      7px
+      8px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.uvi-launcher:focus-visible,
+.uvi-close:focus-visible,
+.uvi-modes button:focus-visible,
+.uvi-suggestions button:focus-visible,
+.uvi-input-shell button:focus-visible {
+  outline:
+    2px solid
+    #6ccbff;
+
+  outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
+
   .uvi-panel,
   .uvi-launcher,
+  .uvi-modes button,
   .uvi-suggestions button,
+  .uvi-input-shell button {
+    transition: none;
+  }
+
   .uvi-typing i {
     animation: none;
-    transition: none;
+  }
+}
+
+/* =========================================================
+   UVI — DEFINITIVE RESPONSIVE SIZE
+========================================================= */
+
+@media (min-width: 1200px) {
+  .uvi-panel {
+    width: 620px;
+    height: min(620px, calc(100svh - 40px));
+  }
+
+  .uvi-message > div {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .uvi-panel {
+    width: 580px;
+    height: min(610px, calc(100svh - 36px));
+  }
+
+  .uvi-message > div {
+    max-width: 89%;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 899px) {
+  .uvi-panel {
+    width: min(560px, calc(100vw - 36px));
+    height: min(610px, calc(100svh - 30px));
+  }
+
+  .uvi-message > div {
+    max-width: 89%;
+  }
+}
+
+@media (min-width: 700px) {
+  .uvi-header {
+    padding-inline: 22px;
+  }
+
+  .uvi-modes {
+    padding-inline: 16px;
+    gap: 8px;
+  }
+
+  .uvi-modes button {
+    min-height: 40px;
+    padding-inline: 13px;
+
+    overflow: visible;
+    text-overflow: clip;
+
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .uvi-conversation {
+    padding-inline: 22px;
+  }
+
+  .uvi-composer {
+    padding-inline: 18px;
+  }
+
+  .uvi-message-assistant > div {
+    max-width: 88%;
+  }
+
+  .uvi-suggestions {
+    width: calc(100% - 38px);
+    margin-left: 34px;
+  }
+
+  .uvi-suggestions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 699px) {
+  .uvi-chat {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  .uvi-panel {
+    position: fixed;
+
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+
+    width: auto;
+    max-width: none;
+
+    height: calc(100dvh - 16px);
+
+    border-radius: 20px;
+  }
+}
+
+/* =========================================================
+   UVI — FINAL BALANCED WIDTH
+========================================================= */
+
+@media (min-width: 1200px) {
+  .uvi-chat .uvi-panel {
+    width: 520px !important;
+    min-width: 520px !important;
+    max-width: 520px !important;
+
+    height: min(
+      620px,
+      calc(100dvh - 44px)
+    ) !important;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .uvi-chat .uvi-panel {
+    width: 500px !important;
+    min-width: 500px !important;
+    max-width: 500px !important;
+
+    height: min(
+      610px,
+      calc(100dvh - 36px)
+    ) !important;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 899px) {
+  .uvi-chat .uvi-panel {
+    width: min(
+      520px,
+      calc(100vw - 32px)
+    ) !important;
+
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: min(
+      620px,
+      calc(100dvh - 32px)
+    ) !important;
+  }
+}
+
+@media (max-width: 699px) {
+  .uvi-chat .uvi-panel {
+    width: calc(100vw - 16px) !important;
+    min-width: 0 !important;
+    max-width: none !important;
   }
 }

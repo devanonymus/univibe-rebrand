@@ -5,158 +5,151 @@ import { motion } from "motion/react";
 
 const foundations = [
   {
-    title: "Architetture costruite per durare",
-    description:
-      "Progettiamo sistemi modulari, documentati e capaci di evolvere senza dover essere ricostruiti ogni volta che cambia una necessità.",
+    title: "Architetture che durano",
+    text:
+      "Sistemi modulari, documentati e progettati per evolvere senza ricostruire tutto ad ogni nuova esigenza.",
+    meta: "Architecture · Scalability",
   },
   {
-    title: "Integrazione prima della sostituzione",
-    description:
-      "Valutiamo ciò che l’azienda utilizza già e colleghiamo strumenti, dati e processi quando è più utile che sostituirli.",
+    title: "Integrare prima di sostituire",
+    text:
+      "Partiamo da ciò che l’azienda utilizza già. Dove ha senso colleghiamo strumenti, dati e processi invece di aggiungere nuove piattaforme.",
+    meta: "Integration · Data",
   },
   {
-    title: "Sicurezza dentro il progetto",
-    description:
-      "Accessi, ruoli, protezione dei dati, continuità e controllo non vengono aggiunti alla fine. Fanno parte dell’architettura.",
+    title: "Sicurezza dentro il sistema",
+    text:
+      "Accessi, ruoli, protezione dei dati e continuità operativa fanno parte dell’architettura fin dall’inizio.",
+    meta: "Security · Governance",
   },
   {
-    title: "Tecnologia proporzionata al problema",
-    description:
-      "Evitiamo infrastrutture sovradimensionate e soluzioni eccessivamente complesse. Ogni scelta deve produrre un vantaggio concreto.",
+    title: "Tecnologia proporzionata",
+    text:
+      "Niente infrastrutture sovradimensionate o complessità tecnica fine a sé stessa. Ogni scelta deve avere una ragione operativa.",
+    meta: "Efficiency · Sustainability",
   },
+];
+
+const stack = [
+  "Software",
+  "Artificial Intelligence",
+  "Cloud",
+  "Data",
+  "Network",
+  "Security",
 ];
 
 export default function Technology() {
   return (
-    <section className="ecosystem-editorial" id="ecosistema">
-      <div className="ecosystem-editorial-background" aria-hidden="true">
-        <div className="ecosystem-editorial-grid" />
-        <div className="ecosystem-editorial-glow" />
-        <span>ECOSYSTEM</span>
+    <section className="ecosystem-new" id="ecosistema">
+      <div className="ecosystem-new-background" aria-hidden="true">
+        <div className="ecosystem-new-orbit ecosystem-new-orbit-large" />
+        <div className="ecosystem-new-orbit ecosystem-new-orbit-small" />
+        <div className="ecosystem-new-axis ecosystem-new-axis-x" />
+        <div className="ecosystem-new-axis ecosystem-new-axis-y" />
 
-        <div className="ecosystem-blueprint">
-          <div className="ecosystem-circle ecosystem-circle-large" />
-          <div className="ecosystem-circle ecosystem-circle-medium" />
-          <div className="ecosystem-circle ecosystem-circle-small" />
-
-          <div className="ecosystem-axis ecosystem-axis-horizontal" />
-          <div className="ecosystem-axis ecosystem-axis-vertical" />
-
-          <span className="ecosystem-node ecosystem-node-one" />
-          <span className="ecosystem-node ecosystem-node-two" />
-          <span className="ecosystem-node ecosystem-node-three" />
-        </div>
+        <span className="ecosystem-new-node ecosystem-new-node-a" />
+        <span className="ecosystem-new-node ecosystem-new-node-b" />
+        <span className="ecosystem-new-node ecosystem-new-node-c" />
       </div>
 
-      <div className="section-container ecosystem-editorial-container">
-        <div className="ecosystem-editorial-opening">
+      <div className="section-container ecosystem-new-container">
+        <div className="ecosystem-new-opening">
           <motion.div
-            className="ecosystem-editorial-heading"
-            initial={{ opacity: 0, y: 32 }}
+            className="ecosystem-new-heading"
+            initial={{ opacity: 0, y: 26 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7 }}
           >
-            <p>Ecosistema tecnologico</p>
+            <span className="uv-eyebrow">
+              Ecosistema tecnologico
+            </span>
 
             <h2>
-              La tecnologia giusta
-              <strong> è quella che l’azienda riesce a governare.</strong>
+              Tecnologia che l&apos;azienda
+              <strong>può davvero governare.</strong>
             </h2>
           </motion.div>
 
           <motion.div
-            className="ecosystem-editorial-intro"
-            initial={{ opacity: 0, y: 25 }}
+            className="ecosystem-new-intro"
+            initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.75, delay: 0.08 }}
+            transition={{ duration: 0.7, delay: 0.08 }}
           >
             <p>
-              Non scegliamo strumenti perché sono nuovi, popolari o
-              tecnicamente affascinanti.
+              Non scegliamo tecnologie perché sono nuove o popolari.
+              Le scegliamo quando rendono l&apos;organizzazione più semplice,
+              sicura e capace di crescere.
             </p>
 
             <p>
-              Li scegliamo quando permettono all’azienda di lavorare meglio,
-              proteggere i dati, integrare i processi e sostenere la crescita
-              senza aumentare inutilmente la complessità.
+              L&apos;obiettivo non è avere più strumenti.
+              È avere un&apos;architettura coerente.
             </p>
           </motion.div>
         </div>
 
-        <motion.div
-          className="ecosystem-editorial-statement"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p>
-            Non vendiamo una tecnologia specifica.
-            <strong>
-              Costruiamo l’architettura più adatta al risultato da ottenere.
-            </strong>
-          </p>
-        </motion.div>
-
-        <div className="ecosystem-editorial-foundations">
-          {foundations.map((foundation, index) => (
-            <motion.article
-              key={foundation.title}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.05,
-              }}
-            >
-              <h3>{foundation.title}</h3>
-              <p>{foundation.description}</p>
-            </motion.article>
-          ))}
-        </div>
-
-        <div className="ecosystem-editorial-stack">
+        <div className="ecosystem-new-layout">
           <motion.div
-            className="ecosystem-editorial-stack-heading"
-            initial={{ opacity: 0, y: 25 }}
+            className="ecosystem-new-principles"
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7 }}
+          >
+            {foundations.map((item, index) => (
+              <article
+                key={item.title}
+                className="ecosystem-new-principle"
+              >
+                <span className="ecosystem-new-principle-index">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <h3>{item.title}</h3>
+
+                <p>{item.text}</p>
+
+                <span className="ecosystem-new-principle-meta">
+                  {item.meta}
+                </span>
+              </article>
+            ))}
+          </motion.div>
+
+          <motion.aside
+            className="ecosystem-new-system"
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.75 }}
           >
-            <p>Le competenze tecniche</p>
+            <span>
+              Un unico sistema
+            </span>
 
             <h3>
-              Software, cloud, dati, intelligenza artificiale e infrastrutture
-              diventano parti dello stesso sistema.
+              Software, dati, AI e infrastrutture non sono reparti separati.
             </h3>
-          </motion.div>
-
-          <motion.div
-            className="ecosystem-editorial-stack-copy"
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.75, delay: 0.08 }}
-          >
-            <p>
-              Lavoriamo con tecnologie moderne e consolidate, selezionate in
-              base a prestazioni, affidabilità, sicurezza, costi di gestione e
-              possibilità di evoluzione.
-            </p>
 
             <p>
-              Il cliente non deve dipendere da una sigla tecnica. Deve poter
-              contare su un sistema comprensibile, mantenibile e coerente con
-              il proprio modello operativo.
+              Li progettiamo come parti dello stesso ecosistema:
+              interoperabile, mantenibile e comprensibile anche nel tempo.
             </p>
+
+            <div className="ecosystem-new-stack">
+              {stack.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
 
             <Link href="#contatti">
-              Valutiamo insieme la tua infrastruttura
+              Analizziamo la tua infrastruttura
             </Link>
-          </motion.div>
+          </motion.aside>
         </div>
       </div>
     </section>
