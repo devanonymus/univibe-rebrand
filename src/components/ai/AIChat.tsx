@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import {
   assistants,
   type AssistantId,
 } from "@/lib/ai/assistants";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type Message = {
@@ -156,14 +156,10 @@ export default function AIChat() {
         onClick={() => setOpen((current) => !current)}
       >
         <span className="uvi-launcher-avatar">
-          <Image
-            src="/ai/uvi-avatar.svg"
-            alt=""
-            width={54}
-            height={54}
-            loading="eager"
-            priority
-          />
+          <img
+                src="/ai/uvi-avatar.svg"
+                alt=""
+              />
           <i />
         </span>
 
@@ -181,12 +177,10 @@ export default function AIChat() {
         <header className="uvi-header">
           <div className="uvi-identity">
             <div className="uvi-avatar">
-              <Image
-                src="/ai/uvi-avatar.svg"
-                alt="UVI, assistente digitale di Univibe"
-                width={54}
-                height={54}
-              />
+              <img
+                  src="/ai/uvi-avatar.svg"
+                  alt="UVI, assistente digitale di Univibe"
+                />
 
               <span className="uvi-online-status" />
             </div>
@@ -240,11 +234,9 @@ export default function AIChat() {
               className={`uvi-message uvi-message-${message.role}`}
             >
               {message.role === "assistant" && (
-                <Image
+                <img
                   src="/ai/uvi-avatar.svg"
                   alt=""
-                  width={30}
-                  height={30}
                 />
               )}
 
@@ -276,12 +268,10 @@ export default function AIChat() {
 
           {loading && (
             <article className="uvi-message uvi-message-assistant">
-              <Image
-                src="/ai/uvi-avatar.svg"
-                alt=""
-                width={30}
-                height={30}
-              />
+              <img
+                  src="/ai/uvi-avatar.svg"
+                  alt=""
+                />
 
               <div>
                 <span>UVI sta analizzando</span>
