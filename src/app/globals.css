@@ -8,6 +8,7 @@
 @import "../styles/hero.css";
 @import "../styles/navbar.css";
 @import "../styles/ai-chat.css";
+@import "../styles/mobile-conversion.css";
 
 :root {
   --background: #050b14;

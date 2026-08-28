@@ -8,6 +8,7 @@ import Projects from "@/components/home-v2/Projects";
 import Transformation from "@/components/home-v2/Transformation";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import MobileConversionBar from "@/components/layout/MobileConversionBar";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <MobileConversionBar />
     </>
   );
 }

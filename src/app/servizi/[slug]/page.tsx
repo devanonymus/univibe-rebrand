@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import MobileConversionBar from "@/components/layout/MobileConversionBar";
 import { getServiceSalesContent } from "@/data/service-sales";
 import { getServiceBySlug, services } from "@/data/services";
 import Link from "next/link";
@@ -409,6 +410,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </main>
 
       <Footer />
+      <MobileConversionBar />
     </>
   );
 }

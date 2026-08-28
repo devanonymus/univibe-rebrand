@@ -81,8 +81,8 @@ export default function Hero() {
               </p>
 
               <div className="hero-premium-actions">
-                <Link href="#servizi" className="hero-premium-primary">
-                  Raccontaci il tuo progetto
+                <Link href="#contatti" className="hero-premium-primary">
+                  Parla con un esperto
                 </Link>
 
                 <Link href="#metodo" className="hero-premium-secondary">

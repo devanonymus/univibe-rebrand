@@ -1593,3 +1593,82 @@
     max-width: none !important;
   }
 }
+
+
+/* ==========================================================
+   UVI — MOBILE OPTIMIZATION
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .ai-chat-launcher,
+  .uvi-launcher,
+  .ai-launcher {
+    right: 14px !important;
+    bottom: 91px !important;
+
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .ai-chat-panel,
+  .uvi-chat-panel,
+  .ai-chat-window {
+    right: 10px !important;
+    bottom: 88px !important;
+    left: 10px !important;
+
+    width: auto !important;
+    max-width: none !important;
+
+    height:
+      min(
+        620px,
+        calc(100svh - 115px)
+      ) !important;
+
+    max-height:
+      calc(100svh - 115px) !important;
+
+    border-radius: 17px !important;
+  }
+
+  .ai-chat-header {
+    min-height: 62px !important;
+    padding:
+      10px
+      13px !important;
+  }
+
+  .ai-chat-messages {
+    padding:
+      14px
+      12px !important;
+  }
+
+  .ai-chat-input-area,
+  .ai-chat-composer {
+    padding:
+      10px
+      10px
+      calc(
+        10px +
+        env(safe-area-inset-bottom)
+      ) !important;
+  }
+
+  .ai-chat-input-area textarea,
+  .ai-chat-composer textarea,
+  .ai-chat-input {
+    font-size: 16px !important;
+  }
+
+  body:has(
+    .ai-chat-panel.is-open
+  )
+  .mobile-conversion-bar {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+}

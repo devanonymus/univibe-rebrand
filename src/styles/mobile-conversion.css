@@ -1,0 +1,3130 @@
+/*
+=============================================================
+UNIVIBE GROUP — MOBILE CONVERSION LAYER
+Solo mobile. Il desktop non viene alterato.
+=============================================================
+*/
+
+.mobile-conversion-bar {
+  display: none;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 699px) {
+
+  :root {
+    --mobile-gutter: 18px;
+  }
+
+  html {
+    scroll-padding-top: 84px;
+  }
+
+  body {
+    padding-bottom: 82px;
+  }
+
+
+  /* --------------------------------------------------------
+     NAVBAR
+  -------------------------------------------------------- */
+
+  .uv-header {
+    padding:
+      max(10px, env(safe-area-inset-top))
+      12px
+      0;
+  }
+
+  .uv-navbar {
+    min-height: 58px;
+    padding-inline: 15px;
+    border-radius: 15px;
+  }
+
+  .uv-brand small {
+    display: none;
+  }
+
+  .uv-brand-word {
+    font-size: 17px;
+  }
+
+  .uv-navbar-cta {
+    display: none;
+  }
+
+  .uv-menu-button {
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+
+  /* --------------------------------------------------------
+     HERO — FIRST SCREEN
+  -------------------------------------------------------- */
+
+  .hero-premium {
+    min-height: auto !important;
+    padding:
+      94px
+      var(--mobile-gutter)
+      28px !important;
+
+    align-items: flex-start;
+
+    background:
+      radial-gradient(
+        circle at 90% 13%,
+        rgba(62,141,255,.13),
+        transparent 31%
+      ),
+      radial-gradient(
+        circle at 0% 82%,
+        rgba(212,46,90,.075),
+        transparent 28%
+      ),
+      #050b14;
+  }
+
+  .hero-premium-container {
+    width: 100%;
+  }
+
+  .hero-premium-layout {
+    display: block;
+  }
+
+  .hero-premium-content {
+    width: 100% !important;
+  }
+
+  .hero-premium-eyebrow {
+    margin-bottom: 17px;
+    gap: 8px;
+
+    font-size: 7px;
+    line-height: 1.3;
+    letter-spacing: .17em;
+  }
+
+  .hero-premium-eyebrow > span {
+    width: 14px;
+  }
+
+  .hero-premium h1,
+  .hero-premium h1 strong {
+    width: 100% !important;
+  }
+
+  .hero-premium h1 {
+    max-width: 355px !important;
+
+    font-size:
+      clamp(
+        36px,
+        10.1vw,
+        44px
+      ) !important;
+
+    line-height: .99 !important;
+    letter-spacing: -.052em !important;
+  }
+
+  .hero-premium h1 strong {
+    margin-top: .13em;
+  }
+
+  .hero-premium-bottom {
+    max-width: 100%;
+    margin-top: 21px;
+  }
+
+  .hero-premium-bottom > p {
+    max-width: 345px;
+
+    font-size: 14.5px !important;
+    line-height: 1.58 !important;
+
+    color: #aab3bf;
+  }
+
+
+  /* --------------------------------------------------------
+     HERO CTA
+  -------------------------------------------------------- */
+
+  .hero-premium-actions {
+    width: 100%;
+    margin-top: 21px;
+
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .hero-premium-primary,
+  .hero-premium-secondary {
+    width: 100%;
+
+    min-height: 52px !important;
+
+    border-radius: 11px;
+
+    font-size: 12px !important;
+    font-weight: 700;
+  }
+
+  .hero-premium-primary {
+    box-shadow:
+      0 12px 30px rgba(212,46,90,.16);
+  }
+
+  .hero-premium-secondary {
+    min-height: 46px !important;
+
+    color: rgba(255,255,255,.72);
+
+    background:
+      rgba(255,255,255,.018);
+  }
+
+
+  /* --------------------------------------------------------
+     RIDUZIONE DEL RUMORE NELLA HERO
+  -------------------------------------------------------- */
+
+  .hero-premium-aside {
+    margin-top: 25px !important;
+    padding-top: 17px !important;
+  }
+
+  .hero-premium-aside-label {
+    margin-bottom: 8px;
+  }
+
+  .hero-premium-aside p {
+    max-width: 340px;
+
+    font-size: 11.5px;
+    line-height: 1.55;
+  }
+
+  .hero-premium-aside strong {
+    margin-top: 5px;
+  }
+
+  .hero-premium-signature {
+    margin-top: 24px !important;
+    padding: 13px 0 !important;
+  }
+
+  .hero-premium-disciplines {
+    grid-template-columns:
+      repeat(2, minmax(0,1fr)) !important;
+
+    gap: 10px 14px !important;
+  }
+
+  .hero-premium-disciplines > span {
+    padding: 0 !important;
+
+    font-size: 6px !important;
+    line-height: 1.4;
+
+    opacity: .84;
+  }
+
+  .hero-blueprint {
+    top: 23% !important;
+    right: -78% !important;
+
+    width: 520px !important;
+
+    opacity: .11 !important;
+  }
+
+
+  /* --------------------------------------------------------
+     GLOBAL SECTION RHYTHM
+  -------------------------------------------------------- */
+
+  .section-container {
+    width:
+      calc(
+        100% -
+        (var(--mobile-gutter) * 2)
+      ) !important;
+  }
+
+  .manifesto-premium,
+  .transformation-v2,
+  .impact-editorial,
+  .method-editorial,
+  .ecosystem-editorial,
+  .projects-compact {
+    padding-top: 62px !important;
+    padding-bottom: 62px !important;
+  }
+
+
+  /* --------------------------------------------------------
+     SECTION HEADINGS
+  -------------------------------------------------------- */
+
+  .manifesto-premium h2,
+  .transformation-v2-heading h2,
+  .impact-editorial-title h2,
+  .method-editorial-heading h2,
+  .ecosystem-editorial-heading h2,
+  .projects-compact-opening h2 {
+    font-size:
+      clamp(
+        31px,
+        8.8vw,
+        39px
+      ) !important;
+
+    line-height: 1.04 !important;
+    letter-spacing: -.045em !important;
+  }
+
+
+  /* --------------------------------------------------------
+     EDITORIAL GRIDS -> MOBILE STORY
+  -------------------------------------------------------- */
+
+  .manifesto-premium-body,
+  .transformation-v2-opening,
+  .impact-editorial-heading,
+  .method-editorial-opening,
+  .method-editorial-result,
+  .ecosystem-editorial-opening,
+  .ecosystem-editorial-stack,
+  .projects-compact-opening {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+  }
+
+  .manifesto-premium-body {
+    margin-top: 37px !important;
+  }
+
+  .manifesto-capabilities,
+  .transformation-v2-intro,
+  .impact-editorial-introduction,
+  .method-editorial-intro,
+  .ecosystem-editorial-intro,
+  .projects-compact-intro {
+    padding:
+      18px
+      0
+      0 !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.09) !important;
+
+    border-left: 0 !important;
+  }
+
+
+  /* --------------------------------------------------------
+     TEXT READABILITY
+  -------------------------------------------------------- */
+
+  .manifesto-premium p,
+  .transformation-v2 p,
+  .impact-editorial p,
+  .method-editorial p,
+  .ecosystem-editorial p,
+  .projects-compact p {
+    line-height: 1.62;
+  }
+
+  .transformation-v2-declaration,
+  .impact-editorial-statement,
+  .method-editorial-question,
+  .ecosystem-editorial-statement {
+    margin-top: 38px !important;
+  }
+
+
+  /* --------------------------------------------------------
+     SERVICES / PROCESS ROWS
+  -------------------------------------------------------- */
+
+  .transformation-v2-stage {
+    min-height: auto !important;
+
+    padding:
+      24px
+      0 !important;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 14px !important;
+  }
+
+  .transformation-v2-ghost {
+    display: none !important;
+  }
+
+
+  /* --------------------------------------------------------
+     PROJECTS
+  -------------------------------------------------------- */
+
+  .projects-compact-grid {
+    grid-template-columns: 1fr !important;
+
+    gap: 13px !important;
+  }
+
+  .project-compact-card {
+    min-height: auto !important;
+
+    border-radius: 15px;
+  }
+
+  .project-compact-content {
+    padding: 22px !important;
+  }
+
+
+  /* --------------------------------------------------------
+     FOOTER
+  -------------------------------------------------------- */
+
+  .footer-top {
+    grid-template-columns: 1fr !important;
+
+    gap: 34px !important;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr !important;
+
+    gap: 13px !important;
+  }
+
+
+  /* --------------------------------------------------------
+     STICKY CONVERSION BAR
+  -------------------------------------------------------- */
+
+  .mobile-conversion-bar {
+    position: fixed;
+
+    z-index: 120;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    padding:
+      8px
+      10px
+      calc(
+        8px +
+        env(safe-area-inset-bottom)
+      );
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5,11,20,0),
+        rgba(5,11,20,.87) 18%,
+        rgba(5,11,20,.97)
+      );
+
+    pointer-events: none;
+  }
+
+  .mobile-conversion-bar-inner {
+    width: 100%;
+
+    min-height: 58px;
+
+    padding:
+      7px
+      7px
+      7px
+      15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    border:
+      1px solid rgba(255,255,255,.11);
+
+    border-radius: 16px;
+
+    background:
+      rgba(10,18,30,.92);
+
+    backdrop-filter:
+      blur(22px);
+
+    box-shadow:
+      0 12px 36px rgba(0,0,0,.36);
+
+    pointer-events: auto;
+  }
+
+  .mobile-conversion-copy {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+  }
+
+  .mobile-conversion-copy span {
+    color:
+      rgba(255,255,255,.54);
+
+    font-size: 9px;
+    line-height: 1.2;
+  }
+
+  .mobile-conversion-copy small {
+    margin-top: 2px;
+
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  .mobile-conversion-button {
+    min-height: 44px;
+
+    padding:
+      0
+      19px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 720;
+
+    background:
+      linear-gradient(
+        110deg,
+        #d42e5a,
+        #eb5b31 52%,
+        #f28b1f
+      );
+
+    box-shadow:
+      0 10px 26px rgba(212,46,90,.18);
+  }
+
+
+  /* --------------------------------------------------------
+     TOUCH TARGETS
+  -------------------------------------------------------- */
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  .mobile-navigation a,
+  .mobile-navigation button {
+    min-height: 46px;
+  }
+
+}
+
+
+/* ==========================================================
+   VERY SMALL PHONES
+========================================================== */
+
+@media (max-width: 374px) {
+
+  .hero-premium {
+    padding-inline: 15px !important;
+  }
+
+  .hero-premium h1 {
+    font-size: 34px !important;
+  }
+
+  .hero-premium-bottom > p {
+    font-size: 13.5px !important;
+  }
+
+  .mobile-conversion-copy {
+    display: none;
+  }
+
+  .mobile-conversion-button {
+    width: 100%;
+  }
+
+  .mobile-conversion-bar-inner {
+    padding-left: 7px;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE MENU — CONVERSION
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .uv-mobile-menu {
+    padding:
+      92px
+      18px
+      28px;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5,11,20,.985),
+        rgba(7,15,26,.99)
+      );
+
+    backdrop-filter: blur(26px);
+  }
+
+  .uv-mobile-menu > a,
+  .uv-mobile-services > button {
+    width: 100%;
+
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+      0
+      3px;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.08);
+
+    color: #f4f7fa;
+
+    font-family:
+      var(--font-sora),
+      sans-serif;
+
+    font-size: 20px;
+    font-weight: 430;
+
+    letter-spacing: -.025em;
+  }
+
+  .uv-mobile-services > button {
+    border-top: 0;
+    background: transparent;
+  }
+
+  .uv-mobile-services > button i {
+    width: 8px;
+    height: 8px;
+
+    border-right:
+      1px solid rgba(255,255,255,.6);
+
+    border-bottom:
+      1px solid rgba(255,255,255,.6);
+
+    transform: rotate(45deg);
+
+    transition: transform .2s ease;
+  }
+
+  .uv-mobile-services > button[aria-expanded="true"] i {
+    transform:
+      rotate(225deg)
+      translate(-2px,-2px);
+  }
+
+  .uv-mobile-services-list {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+      max-height .34s ease,
+      opacity .2s ease;
+  }
+
+  .uv-mobile-services-list.is-open {
+    max-height: 900px;
+
+    opacity: 1;
+  }
+
+  .uv-mobile-services-list > a {
+    display: block;
+
+    padding:
+      15px
+      4px;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.055);
+  }
+
+  .uv-mobile-services-list strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: rgba(255,255,255,.88);
+
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .uv-mobile-services-list span {
+    display: block;
+
+    max-width: 300px;
+
+    color: rgba(255,255,255,.43);
+
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  .uv-mobile-services-all {
+    color: #84c9f2 !important;
+
+    font-size: 11px !important;
+    font-weight: 650 !important;
+  }
+
+  .uv-mobile-contact {
+    min-height: 54px !important;
+
+    margin-top: 22px;
+
+    padding:
+      0
+      18px !important;
+
+    justify-content: center !important;
+
+    border: 0 !important;
+
+    border-radius: 12px;
+
+    color: #fff !important;
+
+    font-family:
+      var(--font-inter),
+      sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 700 !important;
+
+    background:
+      linear-gradient(
+        110deg,
+        #d42e5a,
+        #eb5b31 52%,
+        #f28b1f
+      );
+
+    box-shadow:
+      0 14px 34px
+      rgba(212,46,90,.16);
+  }
+
+
+  /* ========================================================
+     MOBILE UX
+  ======================================================== */
+
+  .uv-menu-open {
+    overflow: hidden;
+  }
+
+  .uv-menu-open .mobile-conversion-bar {
+    display: none;
+  }
+
+  #contatti {
+    scroll-margin-top: 90px;
+  }
+
+  #servizi,
+  #metodo,
+  #progetti,
+  #azienda {
+    scroll-margin-top: 82px;
+  }
+
+
+  /* ========================================================
+     REDUCE MOTION
+  ======================================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+
+      animation-duration:
+        .01ms !important;
+
+      animation-iteration-count:
+        1 !important;
+
+      transition-duration:
+        .01ms !important;
+    }
+
+  }
+
+}
+
+/* ==========================================================
+   UNIVIBE — MOBILE CONVERSION FINAL TUNING
+========================================================== */
+
+@media (max-width: 699px) {
+
+  /* HERO più corta e focalizzata */
+
+  .hero-premium {
+    padding-top: 91px !important;
+    padding-bottom: 22px !important;
+  }
+
+  .hero-premium-eyebrow {
+    margin-bottom: 14px !important;
+  }
+
+  .hero-premium h1 {
+    max-width: 370px !important;
+    font-size: clamp(37px, 10.4vw, 45px) !important;
+    line-height: .96 !important;
+  }
+
+  .hero-premium-bottom {
+    margin-top: 19px !important;
+  }
+
+  .hero-premium-bottom > p {
+    max-width: 360px;
+    font-size: 14px !important;
+    line-height: 1.52 !important;
+  }
+
+  .hero-premium-actions {
+    margin-top: 19px !important;
+  }
+
+  /* CTA primaria dominante */
+
+  .hero-premium-primary {
+    min-height: 54px !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Secondaria meno competitiva */
+
+  .hero-premium-secondary {
+    min-height: 42px !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: rgba(255,255,255,.58) !important;
+  }
+
+  /* Su mobile questo blocco rallenta la conversione */
+
+  .hero-premium-aside {
+    display: none !important;
+  }
+
+  /* Discipline = trust strip compatta */
+
+  .hero-premium-signature {
+    margin-top: 20px !important;
+    padding: 13px 0 3px !important;
+
+    border-bottom: 0 !important;
+  }
+
+  .hero-premium-disciplines {
+    display: flex !important;
+    flex-wrap: wrap !important;
+
+    gap: 7px 15px !important;
+  }
+
+  .hero-premium-disciplines > span {
+    width: auto !important;
+
+    color: rgba(255,255,255,.42) !important;
+
+    font-size: 6.5px !important;
+    letter-spacing: .08em !important;
+  }
+
+  /* Blueprint meno invasivo */
+
+  .hero-blueprint {
+    right: -92% !important;
+    opacity: .08 !important;
+  }
+
+  /* Il contenuto successivo deve apparire prima */
+
+  .manifesto-premium {
+    padding-top: 54px !important;
+  }
+
+
+  /* ========================================================
+     CTA STICKY
+  ======================================================== */
+
+  .mobile-conversion-bar {
+    padding-inline: 8px !important;
+  }
+
+  .mobile-conversion-bar-inner {
+    min-height: 56px !important;
+  }
+
+  .mobile-conversion-button {
+    min-height: 42px !important;
+    padding-inline: 18px !important;
+  }
+
+
+  /* ========================================================
+     UVI
+     Separazione fisica dalla CTA sticky
+  ======================================================== */
+
+  .ai-chat-launcher,
+  .uvi-launcher,
+  .ai-launcher {
+    right: 14px !important;
+    bottom: 86px !important;
+
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+}
+
+
+/* iPhone piccoli */
+
+@media (max-width: 390px) {
+
+  .hero-premium h1 {
+    font-size: 37px !important;
+  }
+
+  .hero-premium-bottom > p {
+    font-size: 13.5px !important;
+  }
+
+}
+
+/* ==========================================================
+   MOBILE — REMOVE DUPLICATION / CLEAN TRANSITION
+========================================================== */
+
+@media (max-width: 699px) {
+
+  /* Eliminiamo la micro-lista ridondante sotto la hero */
+  .hero-premium-signature {
+    display: none !important;
+  }
+
+  /* Chiusura hero più netta */
+  .hero-premium {
+    padding-bottom: 28px !important;
+  }
+
+  /* Più respiro tra hero e sezione seguente */
+  .manifesto-premium {
+    padding-top: 58px !important;
+  }
+
+
+  /* ========================================================
+     CAPABILITIES / DISCIPLINES
+  ======================================================== */
+
+  .manifesto-capabilities {
+    margin-top: 4px;
+  }
+
+  .manifesto-capabilities ul,
+  .manifesto-capabilities-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 0 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border-top: 1px solid rgba(255,255,255,.11);
+    border-bottom: 1px solid rgba(255,255,255,.11);
+  }
+
+  .manifesto-capabilities li,
+  .manifesto-capabilities-list > * {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: rgba(255,255,255,.54);
+
+    font-size: 8px !important;
+    font-weight: 650;
+
+    line-height: 1.25;
+
+    letter-spacing: .09em;
+
+    text-transform: uppercase;
+  }
+
+}
+
+/* ==========================================================
+   MOBILE — CAPABILITY STRIP REFINEMENT
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .manifesto-capabilities {
+    padding-top: 0 !important;
+  }
+
+  .manifesto-capabilities ul,
+  .manifesto-capabilities-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border-top: 1px solid rgba(255,255,255,.11) !important;
+    border-bottom: 1px solid rgba(255,255,255,.11) !important;
+  }
+
+  .manifesto-capabilities li,
+  .manifesto-capabilities-list > * {
+    min-height: 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    margin: 0 !important;
+    padding: 0 6px !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.055);
+
+    color: rgba(255,255,255,.66) !important;
+
+    font-size: 9px !important;
+    font-weight: 650 !important;
+
+    line-height: 1.2 !important;
+
+    letter-spacing: .085em !important;
+
+    text-transform: uppercase;
+  }
+
+  .manifesto-capabilities li:nth-last-child(-n+2),
+  .manifesto-capabilities-list > *:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+
+  .manifesto-capabilities li:nth-child(odd),
+  .manifesto-capabilities-list > *:nth-child(odd) {
+    padding-left: 0 !important;
+
+    border-right: 1px solid rgba(255,255,255,.055);
+  }
+
+  .manifesto-capabilities li:nth-child(even),
+  .manifesto-capabilities-list > *:nth-child(even) {
+    padding-left: 18px !important;
+  }
+
+}
+
+/* ==========================================================
+   MOBILE — REMOVE CAPABILITY GRID
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .manifesto-capabilities {
+    display: none !important;
+  }
+
+  .manifesto-premium-body {
+    margin-top: 28px !important;
+  }
+
+}
+
+/* ==========================================================
+   MOBILE — REMOVE REAL MANIFESTO CAPABILITIES
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .manifesto-editorial-capabilities {
+    display: none !important;
+  }
+
+  .manifesto-editorial-statement {
+    margin-top: 34px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   UNIVIBE — SERVICE PAGES MOBILE CONVERSION
+========================================================== */
+
+@media (max-width: 699px) {
+
+  /* ========================================================
+     PAGE FOUNDATION
+  ======================================================== */
+
+  .conversion-page {
+    width: 100%;
+    overflow: clip;
+  }
+
+  .conversion-page .section-container {
+    width: calc(100% - 36px) !important;
+  }
+
+
+  /* ========================================================
+     SERVICE HERO
+  ======================================================== */
+
+  .conversion-hero {
+    position: relative;
+
+    min-height: auto !important;
+
+    padding:
+      96px
+      0
+      34px !important;
+
+    overflow: hidden;
+  }
+
+  .conversion-hero-container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .conversion-hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .conversion-eyebrow {
+    margin:
+      0
+      0
+      15px !important;
+
+    color: #f28b1f !important;
+
+    font-size: 8px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.3;
+
+    letter-spacing: .15em !important;
+
+    text-transform: uppercase;
+  }
+
+  .conversion-hero h1 {
+    width: 100% !important;
+    max-width: 390px !important;
+
+    margin: 0 !important;
+
+    font-size:
+      clamp(
+        36px,
+        10vw,
+        44px
+      ) !important;
+
+    line-height: .99 !important;
+    letter-spacing: -.052em !important;
+
+    text-wrap: pretty;
+  }
+
+  .conversion-hero-description {
+    width: 100%;
+    max-width: 365px !important;
+
+    margin:
+      20px
+      0
+      0 !important;
+
+    font-size: 14px !important;
+    line-height: 1.58 !important;
+
+    color: rgba(255,255,255,.62) !important;
+  }
+
+
+  /* ========================================================
+     HERO PROOF
+  ======================================================== */
+
+  .conversion-proof-line {
+    margin-top: 22px !important;
+    padding:
+      13px
+      0 !important;
+
+    display: flex !important;
+    flex-wrap: wrap !important;
+
+    gap:
+      7px
+      15px !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.09);
+
+    border-bottom:
+      1px solid rgba(255,255,255,.09);
+  }
+
+  .conversion-proof-line span {
+    width: auto !important;
+
+    padding: 0 !important;
+
+    font-size: 7px !important;
+    font-weight: 650;
+
+    letter-spacing: .07em;
+
+    color: rgba(255,255,255,.43) !important;
+
+    text-transform: uppercase;
+  }
+
+
+  /* ========================================================
+     HERO CTA
+  ======================================================== */
+
+  .conversion-hero-actions {
+    width: 100%;
+
+    margin-top: 21px !important;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 8px !important;
+  }
+
+  .conversion-primary-button,
+  .conversion-secondary-button {
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 11px !important;
+
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+  }
+
+  .conversion-primary-button {
+    min-height: 53px !important;
+
+    color: white !important;
+
+    background:
+      linear-gradient(
+        110deg,
+        #d42e5a,
+        #eb5b31 52%,
+        #f28b1f
+      ) !important;
+
+    box-shadow:
+      0 13px 31px
+      rgba(212,46,90,.16);
+  }
+
+  .conversion-secondary-button {
+    min-height: 43px !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    color: rgba(255,255,255,.61) !important;
+  }
+
+  .conversion-hero-note {
+    max-width: 345px;
+
+    margin:
+      13px
+      0
+      0 !important;
+
+    font-size: 9.5px !important;
+
+    line-height: 1.5 !important;
+
+    color: rgba(255,255,255,.35) !important;
+  }
+
+
+  /* ========================================================
+     HERO DECORATION — DON'T COMPETE WITH MESSAGE
+  ======================================================== */
+
+  .conversion-hero-letter {
+    opacity: .025 !important;
+  }
+
+  .conversion-blueprint {
+    right: -75% !important;
+
+    width: 500px !important;
+
+    opacity: .10 !important;
+  }
+
+  .conversion-hero-grid {
+    opacity: .045 !important;
+  }
+
+
+  /* ========================================================
+     GENERAL SECTION RHYTHM
+  ======================================================== */
+
+  .conversion-problem,
+  .conversion-cost,
+  .conversion-solution,
+  .conversion-deliverables,
+  .conversion-method,
+  .conversion-why,
+  .conversion-objections,
+  .conversion-final,
+  .conversion-next-service {
+    padding-top: 62px !important;
+    padding-bottom: 62px !important;
+  }
+
+
+  /* ========================================================
+     REMOVE DESKTOP SIDE NOTES
+  ======================================================== */
+
+  .conversion-reading-layout {
+    display: block !important;
+  }
+
+  .conversion-side-note {
+    display: none !important;
+  }
+
+
+  /* ========================================================
+     LABELS
+  ======================================================== */
+
+  .conversion-section-label {
+    margin:
+      0
+      0
+      15px !important;
+
+    font-size: 8px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.3;
+
+    letter-spacing: .16em !important;
+
+    color: #f28b1f !important;
+
+    text-transform: uppercase;
+  }
+
+
+  /* ========================================================
+     SECTION HEADLINES
+  ======================================================== */
+
+  .conversion-article h2,
+  .conversion-cost-heading h2,
+  .conversion-solution-heading h2,
+  .conversion-deliverables-heading h2,
+  .conversion-method-intro h2,
+  .conversion-objections-heading h2,
+  .conversion-final h2 {
+    width: 100% !important;
+    max-width: 400px !important;
+
+    margin: 0 !important;
+
+    font-size:
+      clamp(
+        30px,
+        8.4vw,
+        38px
+      ) !important;
+
+    line-height: 1.04 !important;
+
+    letter-spacing: -.043em !important;
+
+    text-wrap: pretty;
+  }
+
+
+  /* ========================================================
+     TEXT
+  ======================================================== */
+
+  .conversion-rich-copy {
+    margin-top: 27px !important;
+  }
+
+  .conversion-rich-copy p,
+  .conversion-solution-copy > p,
+  .conversion-method-intro > p,
+  .conversion-method-text p,
+  .conversion-cost-heading > p,
+  .conversion-deliverables-heading > p,
+  .conversion-objections-heading > p {
+    font-size: 13.5px !important;
+
+    line-height: 1.62 !important;
+
+    color: rgba(255,255,255,.57) !important;
+  }
+
+  .conversion-lead-paragraph {
+    font-size: 16px !important;
+
+    line-height: 1.53 !important;
+
+    color: rgba(255,255,255,.82) !important;
+  }
+
+
+  /* ========================================================
+     PROBLEM CALLOUT
+  ======================================================== */
+
+  .conversion-callout {
+    margin-top: 28px !important;
+
+    padding:
+      20px
+      0
+      0 !important;
+
+    border: 0 !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.1) !important;
+
+    background: transparent !important;
+  }
+
+  .conversion-callout p {
+    margin: 0;
+
+    font-size: 13px !important;
+
+    line-height: 1.57 !important;
+
+    color: rgba(255,255,255,.67) !important;
+  }
+
+
+  /* ========================================================
+     COST LIST — NO CARD WALL
+  ======================================================== */
+
+  .conversion-cost-heading {
+    max-width: 100% !important;
+  }
+
+  .conversion-cost-list {
+    margin-top: 33px !important;
+
+    display: block !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.1);
+  }
+
+  .conversion-cost-list article {
+    min-height: auto !important;
+
+    padding:
+      19px
+      0 !important;
+
+    border: 0 !important;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.075) !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+  }
+
+  .conversion-cost-list h3 {
+    margin: 0 !important;
+
+    font-size: 15px !important;
+
+    line-height: 1.38 !important;
+
+    font-weight: 520 !important;
+  }
+
+
+  /* ========================================================
+     MID CTA
+  ======================================================== */
+
+  .conversion-mid-cta {
+    margin-top: 34px !important;
+
+    padding:
+      21px !important;
+
+    display: block !important;
+
+    border-radius: 14px !important;
+  }
+
+  .conversion-mid-cta p {
+    margin: 0;
+
+    font-size: 15px !important;
+  }
+
+  .conversion-mid-cta span {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 11px !important;
+
+    line-height: 1.5;
+  }
+
+  .conversion-mid-cta > a {
+    width: 100%;
+
+    min-height: 47px;
+
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+  }
+
+
+  /* ========================================================
+     SOLUTION
+  ======================================================== */
+
+  .conversion-solution-layout {
+    display: block !important;
+  }
+
+  .conversion-solution-copy {
+    margin-top: 29px !important;
+  }
+
+  .conversion-solution-copy blockquote {
+    margin:
+      28px
+      0
+      0 !important;
+
+    padding:
+      0
+      0
+      0
+      17px !important;
+
+    border-left:
+      1px solid #f28b1f !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.55 !important;
+  }
+
+
+  /* ========================================================
+     DELIVERABLES — EDITORIAL LIST
+  ======================================================== */
+
+  .conversion-deliverables-list {
+    margin-top: 32px !important;
+
+    display: block !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.1);
+  }
+
+  .conversion-deliverables-list article {
+    padding:
+      22px
+      0 !important;
+
+    border: 0 !important;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.075) !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+  }
+
+  .conversion-deliverables-list h3 {
+    margin:
+      0
+      0
+      7px !important;
+
+    font-size: 16px !important;
+  }
+
+  .conversion-deliverables-list p {
+    margin: 0 !important;
+
+    max-width: 360px;
+
+    font-size: 12px !important;
+
+    line-height: 1.55 !important;
+  }
+
+
+  /* ========================================================
+     METHOD
+  ======================================================== */
+
+  .conversion-method-layout {
+    display: block !important;
+  }
+
+  .conversion-method-intro h2 strong {
+    display: block;
+  }
+
+  .conversion-method-intro > p {
+    margin-top: 24px !important;
+  }
+
+  .conversion-method-text {
+    margin-top: 31px !important;
+
+    padding-top: 24px;
+
+    border-top:
+      1px solid rgba(255,255,255,.09);
+  }
+
+  .conversion-method-text p + p {
+    margin-top: 17px !important;
+  }
+
+
+  /* ========================================================
+     WHY UNIVIBE
+  ======================================================== */
+
+  .conversion-why .conversion-text-link {
+    min-height: 48px;
+
+    margin-top: 27px !important;
+
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 12px !important;
+  }
+
+
+  /* ========================================================
+     OBJECTIONS / FAQ
+  ======================================================== */
+
+  .conversion-objections-layout {
+    display: block !important;
+  }
+
+  .conversion-objections-list {
+    margin-top: 34px !important;
+  }
+
+  .conversion-objections-list details {
+    padding:
+      18px
+      0 !important;
+
+    border: 0 !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.08) !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+  }
+
+  .conversion-objections-list details:last-child {
+    border-bottom:
+      1px solid rgba(255,255,255,.08) !important;
+  }
+
+  .conversion-objections-list summary {
+    font-size: 14px !important;
+
+    line-height: 1.42 !important;
+  }
+
+  .conversion-objections-list details p {
+    padding-top: 13px;
+
+    font-size: 12.5px !important;
+
+    line-height: 1.58 !important;
+  }
+
+
+  /* ========================================================
+     FINAL CONVERSION AREA
+  ======================================================== */
+
+  .conversion-final {
+    padding-bottom: 74px !important;
+  }
+
+  .conversion-final-description {
+    margin-top: 21px !important;
+
+    max-width: 365px;
+
+    font-size: 14px !important;
+
+    line-height: 1.58 !important;
+  }
+
+  .conversion-final-box {
+    margin-top: 29px !important;
+
+    padding:
+      22px !important;
+
+    display: block !important;
+
+    border-radius: 15px !important;
+  }
+
+  .conversion-final-box strong {
+    font-size: 16px !important;
+
+    line-height: 1.35;
+  }
+
+  .conversion-final-box span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 11.5px !important;
+
+    line-height: 1.55 !important;
+  }
+
+  .conversion-final-actions {
+    width: 100%;
+
+    margin-top: 20px;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 9px !important;
+  }
+
+  .conversion-final-actions a {
+    width: 100%;
+
+    min-height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 11px !important;
+    font-weight: 700;
+  }
+
+
+  /* ========================================================
+     NEXT SERVICE
+  ======================================================== */
+
+  .conversion-next-service {
+    padding-top: 35px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .conversion-next-service-layout {
+    display: block !important;
+  }
+
+  .conversion-next-service-layout > p {
+    margin:
+      0
+      0
+      13px;
+
+    font-size: 8px !important;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+  }
+
+  .conversion-next-service-layout > a {
+    display: block !important;
+
+    padding-top: 15px;
+
+    border-top:
+      1px solid rgba(255,255,255,.1);
+  }
+
+  .conversion-next-service-layout strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 20px !important;
+
+    line-height: 1.2 !important;
+  }
+
+}
+
+/* ==========================================================
+   SERVICE HERO — MOBILE PROOF POINTS FINAL
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .conversion-proof-line {
+    margin-top: 22px !important;
+
+    padding:
+      15px
+      0 !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+
+    gap: 11px !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.10);
+
+    border-bottom:
+      1px solid rgba(255,255,255,.10);
+  }
+
+  .conversion-proof-line span {
+    position: relative;
+
+    width: 100% !important;
+
+    padding-left: 13px !important;
+
+    color:
+      rgba(255,255,255,.66) !important;
+
+    font-size: 9.5px !important;
+    font-weight: 560 !important;
+
+    line-height: 1.35 !important;
+
+    letter-spacing: .035em !important;
+
+    text-transform: uppercase;
+  }
+
+  .conversion-proof-line span::before {
+    position: absolute;
+
+    top: .42em;
+    left: 0;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    content: "";
+
+    background: #f28b1f;
+
+    box-shadow:
+      0 0 9px rgba(242,139,31,.38);
+  }
+
+}
+
+/* ==========================================================
+   FOOTER — MOBILE PREMIUM COMPACT
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .footer {
+    padding:
+      58px
+      0
+      calc(
+        105px +
+        env(safe-area-inset-bottom)
+      ) !important;
+  }
+
+  .footer .section-container {
+    width: calc(100% - 36px) !important;
+  }
+
+  .footer-top {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+
+    gap:
+      38px
+      26px !important;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand {
+    display: inline-flex;
+
+    font-size: 22px !important;
+
+    letter-spacing: .16em;
+  }
+
+  .footer-group {
+    margin-top: 7px !important;
+
+    font-size: 7px !important;
+
+    letter-spacing: .22em !important;
+
+    color: rgba(255,255,255,.38) !important;
+  }
+
+  .footer-description {
+    max-width: 365px;
+
+    margin-top: 22px !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.65 !important;
+
+    color: rgba(255,255,255,.60) !important;
+  }
+
+  .footer-title {
+    margin-bottom: 17px !important;
+
+    color: #f28b1f !important;
+
+    font-size: 8px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.3;
+
+    letter-spacing: .16em !important;
+
+    text-transform: uppercase;
+  }
+
+  .footer-column {
+    min-width: 0;
+  }
+
+  .footer-column > a {
+    min-height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 11.5px !important;
+
+    line-height: 1.4 !important;
+
+    color: rgba(255,255,255,.72) !important;
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+
+    padding-top: 26px;
+
+    border-top:
+      1px solid rgba(255,255,255,.08);
+  }
+
+  .footer-contact > a {
+    width: fit-content;
+
+    min-height: 37px;
+
+    gap: 5px;
+
+    font-size: 12px !important;
+
+    color: rgba(255,255,255,.82) !important;
+  }
+
+  .footer-contact > p:not(.footer-title) {
+    margin:
+      12px
+      0
+      0;
+
+    font-size: 11px !important;
+
+    color: rgba(255,255,255,.48) !important;
+  }
+
+  .footer-contact svg {
+    width: 12px;
+    height: 12px;
+
+    opacity: .65;
+  }
+
+  .footer-bottom {
+    margin-top: 42px !important;
+
+    padding-top: 24px !important;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 12px !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.09);
+  }
+
+  .footer-bottom > p,
+  .footer-bottom a {
+    font-size: 9px !important;
+
+    line-height: 1.45 !important;
+
+    color: rgba(255,255,255,.40) !important;
+  }
+
+  .footer-bottom > div {
+    display: flex !important;
+
+    flex-wrap: wrap;
+
+    gap:
+      8px
+      17px !important;
+  }
+
+  .footer-bottom > p:last-child {
+    margin-top: 3px;
+
+    color: rgba(255,255,255,.28) !important;
+  }
+
+}
+
+/* ==========================================================
+   FOOTER CONTACT — MOBILE FINAL REFINEMENT
+========================================================== */
+
+@media (max-width: 699px) {
+
+  .footer-contact {
+    margin-top: 4px !important;
+
+    padding:
+      24px
+      0
+      0 !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.09);
+  }
+
+  .footer-contact .footer-title {
+    margin-bottom: 18px !important;
+  }
+
+  .footer-contact > a {
+    position: relative;
+
+    width: 100% !important;
+
+    min-height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    padding:
+      0
+      0 !important;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.055);
+
+    font-size: 12px !important;
+    font-weight: 520 !important;
+
+    color: rgba(255,255,255,.82) !important;
+  }
+
+  .footer-contact > a:first-of-type {
+    color: #ffffff !important;
+  }
+
+  .footer-contact > a svg {
+    flex-shrink: 0;
+
+    width: 12px !important;
+    height: 12px !important;
+
+    opacity: .48 !important;
+  }
+
+  .footer-contact > p:not(.footer-title) {
+    margin:
+      16px
+      0
+      0 !important;
+
+    padding:
+      0
+      0
+      2px;
+
+    font-size: 10px !important;
+
+    color: rgba(255,255,255,.38) !important;
+  }
+
+
+  /* FOOTER BOTTOM PIÙ VICINO */
+
+  .footer-bottom {
+    margin-top: 30px !important;
+
+    padding-top: 20px !important;
+
+    gap: 9px !important;
+  }
+
+  .footer-bottom > p:first-child {
+    font-size: 8px !important;
+  }
+
+  .footer-bottom > div {
+    gap: 14px !important;
+  }
+
+  .footer-bottom a {
+    font-size: 8px !important;
+  }
+
+  .footer-bottom > p:last-child {
+    margin-top: 1px !important;
+
+    font-size: 8px !important;
+
+    color: rgba(255,255,255,.27) !important;
+  }
+
+
+  /* RIDUCE SPAZIO VUOTO COMPLESSIVO */
+
+  .footer {
+    padding-bottom:
+      calc(
+        88px +
+        env(safe-area-inset-bottom)
+      ) !important;
+  }
+
+}
+
+/* ==========================================================
+   UNIVIBE — MOBILE FOOTER FINAL
+   Consolidated production version
+========================================================== */
+
+@media (max-width: 699px) {
+
+  /* ========================================================
+     FOOTER FOUNDATION
+  ======================================================== */
+
+  .footer {
+    position: relative;
+
+    padding:
+      48px
+      0
+      calc(92px + env(safe-area-inset-bottom)) !important;
+
+    overflow: hidden;
+
+    background:
+      radial-gradient(
+        circle at 80% 100%,
+        rgba(62,141,255,.04),
+        transparent 34%
+      ),
+      #030914 !important;
+  }
+
+  .footer .section-container {
+    width: calc(100% - 28px) !important;
+    max-width: none !important;
+  }
+
+  .footer-top {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+
+    gap:
+      34px
+      22px !important;
+  }
+
+
+  /* ========================================================
+     BRAND
+  ======================================================== */
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand {
+    display: inline-flex;
+
+    font-size: 21px !important;
+
+    letter-spacing: .16em;
+  }
+
+  .footer-group {
+    margin:
+      7px
+      0
+      0 !important;
+
+    font-size: 7px !important;
+
+    letter-spacing: .21em !important;
+
+    color: rgba(255,255,255,.36) !important;
+  }
+
+  .footer-description {
+    max-width: 350px;
+
+    margin:
+      19px
+      0
+      0 !important;
+
+    color: rgba(255,255,255,.55) !important;
+
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+
+  /* ========================================================
+     FOOTER COLUMNS
+  ======================================================== */
+
+  .footer-title {
+    margin:
+      0
+      0
+      15px !important;
+
+    color: #f28b1f !important;
+
+    font-size: 7px !important;
+    font-weight: 750 !important;
+
+    line-height: 1.2;
+
+    letter-spacing: .18em !important;
+
+    text-transform: uppercase;
+  }
+
+  .footer-column {
+    min-width: 0;
+  }
+
+  .footer-column > a {
+    min-height: 31px;
+
+    display: flex;
+    align-items: center;
+
+    color: rgba(255,255,255,.65) !important;
+
+    font-size: 10.5px !important;
+
+    line-height: 1.35 !important;
+  }
+
+
+  /* ========================================================
+     CONTACT
+  ======================================================== */
+
+  .footer-contact {
+    grid-column: 1 / -1 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+  }
+
+  .footer-contact .footer-title {
+    margin-bottom: 17px !important;
+  }
+
+  .footer-contact > a {
+    width: 100% !important;
+    min-height: 51px !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.075) !important;
+
+    color: #f4f6f8 !important;
+  }
+
+  .footer-contact-main {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+  }
+
+  .footer-contact-main strong {
+    color: rgba(255,255,255,.9);
+
+    font-size: 11.5px !important;
+    font-weight: 570 !important;
+  }
+
+  .footer-contact-main svg {
+    width: 14px !important;
+    height: 14px !important;
+
+    color: rgba(255,255,255,.34);
+
+    opacity: 1 !important;
+  }
+
+  .footer-contact > a:nth-of-type(2) .footer-contact-main svg,
+  .footer-contact > a:nth-of-type(3) .footer-contact-main svg {
+    color: rgba(242,139,31,.72);
+  }
+
+  .footer-contact > a > svg {
+    width: 12px !important;
+    height: 12px !important;
+
+    opacity: .55 !important;
+  }
+
+
+  /* ========================================================
+     OPERATING NETWORK
+  ======================================================== */
+
+  .footer-locations,
+  .footer-location {
+    display: none !important;
+  }
+
+  .footer-locations-premium {
+    position: relative;
+
+    width: 100% !important;
+
+    margin:
+      18px
+      0
+      0 !important;
+
+    padding:
+      18px
+      16px
+      15px !important;
+
+    overflow: hidden;
+
+    border:
+      1px solid rgba(255,255,255,.095);
+
+    border-radius: 15px;
+
+    background:
+      radial-gradient(
+        circle at 88% 18%,
+        rgba(62,141,255,.085),
+        transparent 33%
+      ),
+      radial-gradient(
+        circle at 8% 110%,
+        rgba(212,46,90,.045),
+        transparent 30%
+      ),
+      rgba(255,255,255,.016);
+
+    isolation: isolate;
+  }
+
+
+  /* Graphic network */
+
+  .footer-location-visual {
+    position: absolute;
+
+    z-index: -1;
+
+    top: 6px;
+    right: 2px;
+
+    width: 82px;
+    height: 82px;
+
+    opacity: .23;
+
+    pointer-events: none;
+  }
+
+  .location-orbit,
+  .location-node,
+  .location-connection {
+    position: absolute;
+  }
+
+  .location-orbit {
+    border:
+      1px solid rgba(108,203,255,.16);
+
+    border-radius: 50%;
+  }
+
+  .location-orbit-one {
+    top: 6px;
+    right: 4px;
+
+    width: 65px;
+    height: 65px;
+  }
+
+  .location-orbit-two {
+    top: 21px;
+    right: 19px;
+
+    width: 35px;
+    height: 35px;
+  }
+
+  .location-node {
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #6ccbff;
+
+    box-shadow:
+      0 0 8px rgba(108,203,255,.4);
+  }
+
+  .location-node-main {
+    top: 38px;
+    right: 31px;
+
+    width: 6px;
+    height: 6px;
+
+    background: #f28b1f;
+
+    box-shadow:
+      0 0 11px rgba(242,139,31,.48);
+  }
+
+  .location-node-one {
+    top: 13px;
+    right: 8px;
+  }
+
+  .location-node-two {
+    top: 63px;
+    right: 7px;
+  }
+
+  .location-connection {
+    width: 30px;
+    height: 1px;
+
+    transform-origin: left center;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(108,203,255,.28),
+        transparent
+      );
+  }
+
+  .location-connection-one {
+    top: 40px;
+    right: 13px;
+
+    transform: rotate(-42deg);
+  }
+
+  .location-connection-two {
+    top: 42px;
+    right: 11px;
+
+    transform: rotate(43deg);
+  }
+
+
+  /* Taranto */
+
+  .footer-location-primary {
+    position: relative;
+    z-index: 2;
+
+    display: grid !important;
+
+    grid-template-columns:
+      35px
+      minmax(0,1fr) !important;
+
+    align-items: center !important;
+
+    gap: 11px !important;
+  }
+
+  .footer-location-icon {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+      1px solid rgba(242,139,31,.19);
+
+    border-radius: 50%;
+
+    color: #f28b1f;
+
+    background:
+      rgba(242,139,31,.045);
+  }
+
+  .footer-location-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .footer-location-primary > div {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .footer-location-kicker {
+    margin-bottom: 3px;
+
+    color: #f28b1f !important;
+
+    font-size: 6px !important;
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    letter-spacing: .15em !important;
+
+    text-transform: uppercase;
+  }
+
+  .footer-location-primary strong {
+    color: #f4f6f8 !important;
+
+    font-family:
+      var(--font-sora),
+      sans-serif;
+
+    font-size: 14px !important;
+    font-weight: 530 !important;
+
+    line-height: 1.17;
+
+    letter-spacing: -.02em;
+  }
+
+  .footer-location-primary small {
+    margin-top: 3px;
+
+    color: rgba(255,255,255,.31);
+
+    font-size: 6.5px !important;
+
+    line-height: 1.3;
+  }
+
+
+  /* Milan + Turin */
+
+  .footer-location-secondary {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 15px !important;
+
+    padding-top: 12px !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+      auto
+      minmax(0,1fr) !important;
+
+    align-items: center !important;
+
+    gap: 14px !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.065) !important;
+  }
+
+  .footer-location-secondary > span {
+    color: rgba(255,255,255,.28) !important;
+
+    font-size: 5.8px !important;
+    font-weight: 720;
+
+    letter-spacing: .13em;
+
+    white-space: nowrap;
+
+    text-transform: uppercase;
+  }
+
+  .footer-location-points {
+    display: flex !important;
+
+    align-items: center;
+    justify-content: flex-end !important;
+
+    gap: 6px !important;
+  }
+
+  .footer-location-points > span {
+    min-height: 25px;
+
+    padding:
+      0
+      8px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    border:
+      1px solid rgba(255,255,255,.08);
+
+    border-radius: 999px;
+
+    background:
+      rgba(255,255,255,.016);
+  }
+
+  .footer-location-points i {
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #6ccbff;
+
+    box-shadow:
+      0 0 7px rgba(108,203,255,.4);
+  }
+
+  .footer-location-points > span:last-child i {
+    background: #f28b1f;
+
+    box-shadow:
+      0 0 7px rgba(242,139,31,.38);
+  }
+
+  .footer-location-points strong {
+    color: rgba(255,255,255,.68) !important;
+
+    font-size: 7.5px !important;
+    font-weight: 570 !important;
+  }
+
+
+  /* ========================================================
+     LEGAL / BRAND SIGNATURE
+  ======================================================== */
+
+  .footer-bottom {
+    width: 100% !important;
+
+    margin-top: 20px !important;
+
+    padding-top: 18px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 7px !important;
+
+    border-top:
+      1px solid rgba(255,255,255,.085) !important;
+
+    text-align: center !important;
+  }
+
+  .footer-bottom > p,
+  .footer-bottom > div {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .footer-bottom > p:first-child {
+    margin: 0 !important;
+
+    color: rgba(255,255,255,.58) !important;
+
+    font-size: 8px !important;
+    font-weight: 500 !important;
+  }
+
+  .footer-bottom > div {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 14px !important;
+  }
+
+  .footer-bottom a {
+    color: rgba(255,255,255,.40) !important;
+
+    font-size: 7.5px !important;
+  }
+
+  .footer-policy-divider {
+    width: 1px;
+    height: 12px;
+
+    background:
+      rgba(255,255,255,.12);
+  }
+
+  .footer-bottom > p:last-of-type {
+    margin:
+      3px
+      0
+      0 !important;
+
+    color: rgba(255,255,255,.31) !important;
+
+    font-size: 6.8px !important;
+    font-weight: 700 !important;
+
+    letter-spacing: .15em !important;
+
+    text-transform: uppercase;
+  }
+
+  .footer-signature-line {
+    width: 28px;
+    height: 1px;
+
+    margin-top: 1px;
+
+    background:
+      linear-gradient(
+        90deg,
+        #f28b1f,
+        #ea6139
+      );
+  }
+
+  .footer-signature {
+    margin-top: 2px;
+
+    color: rgba(108,203,255,.34);
+
+    font-family:
+      var(--font-sora),
+      sans-serif;
+
+    font-size: 9px !important;
+    font-weight: 600;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+  }
+
+  .footer-bottom::after {
+    display: none !important;
+  }
+
+
+  /* ========================================================
+     MOBILE STICKY CONVERSION BAR
+  ======================================================== */
+
+  .mobile-conversion-bar {
+    position: fixed;
+
+    z-index: 120;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    padding:
+      7px
+      9px
+      calc(7px + env(safe-area-inset-bottom));
+
+    background:
+      linear-gradient(
+        180deg,
+        transparent,
+        rgba(3,9,20,.82) 18%,
+        rgba(3,9,20,.98)
+      );
+
+    pointer-events: none;
+  }
+
+  .mobile-conversion-bar-inner {
+    width: 100%;
+
+    min-height: 62px;
+
+    padding:
+      7px
+      7px
+      7px
+      9px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+      1px solid rgba(255,255,255,.12);
+
+    border-radius: 16px;
+
+    background:
+      rgba(6,13,23,.96);
+
+    box-shadow:
+      0 15px 40px rgba(0,0,0,.35);
+
+    backdrop-filter: blur(20px);
+
+    pointer-events: auto;
+  }
+
+  .mobile-conversion-brand {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border:
+      1px solid rgba(255,255,255,.15);
+
+    border-radius: 50%;
+
+    font-family:
+      var(--font-sora),
+      sans-serif;
+
+    font-size: 18px;
+    font-weight: 650;
+
+    background:
+      linear-gradient(
+        135deg,
+        #d42e5a,
+        #f28b1f
+      );
+
+    background-clip: text;
+
+    color: transparent;
+  }
+
+  .mobile-conversion-copy {
+    min-width: 0;
+
+    margin-right: auto;
+
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .mobile-conversion-copy span {
+    color: rgba(255,255,255,.42) !important;
+
+    font-size: 6.8px !important;
+    font-weight: 680;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+  }
+
+  .mobile-conversion-copy strong {
+    margin-top: 1px;
+
+    color: #fff;
+
+    font-family:
+      var(--font-sora),
+      sans-serif;
+
+    font-size: 13px !important;
+    font-weight: 640;
+
+    white-space: nowrap;
+  }
+
+  .mobile-conversion-button {
+    min-height: 45px;
+
+    padding:
+      0
+      14px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    color: #fff;
+
+    font-size: 10px !important;
+    font-weight: 700;
+
+    background:
+      linear-gradient(
+        110deg,
+        #d42e5a,
+        #ec5c31 52%,
+        #f28b1f
+      );
+
+    box-shadow:
+      0 10px 25px rgba(212,46,90,.16);
+  }
+
+  .mobile-conversion-button svg {
+    width: 13px;
+    height: 13px;
+  }
+
+
+  /* ========================================================
+     UVI
+  ======================================================== */
+
+  .ai-chat-launcher,
+  .uvi-launcher,
+  .ai-launcher {
+    right: 14px !important;
+    bottom: 86px !important;
+
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .uv-menu-open .mobile-conversion-bar {
+    display: none;
+  }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 374px) {
+
+  .mobile-conversion-brand {
+    display: none;
+  }
+
+  .mobile-conversion-copy strong {
+    font-size: 12px !important;
+  }
+
+  .mobile-conversion-button {
+    padding-inline: 12px !important;
+  }
+
+  .footer-location-secondary {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-location-points {
+    justify-content: flex-start !important;
+  }
+
+}
